@@ -1,11 +1,10 @@
-/*I took some colors from the "One Dark Syntax" theme from atom*/
 :root {
-  --my-bg-color: #011627;
-  --my-title-color: hsl( 95, 38%, 62%);
-  --my-text-color: hsl(220, 14%, 71%); /*#F6F7F8;*/
-  --my-link-color: hsl( 29, 54%, 61%); /*#2EC4B6;*/
-  --my-hover-color: #FF3366;
-  --my-border-color: /**/hsl(187, 47%, 55%);/*/#2EC4B6;/*#20A4F3;*/
+  --my-bg-color: #051923;
+  --my-title-color: #D3D4D9;/*hsl( 95, 38%, 62%);*/
+  --my-text-color: #D3D4D9;/*#A2A79E;*/
+  --my-link-color: #EFCB68;/*hsl( 29, 54%, 61%); /*#2EC4B6;*/
+  --my-hover-color: /*hsl(355, 65%, 65%);hsl( 5, 48%, 51%);*/#FF3366;
+  --my-border-color: #2364AA;
 }
 
 *:focus {
@@ -17,6 +16,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 body {
+  font-family: "Courier New", Courier, monospace;
   background-color: var(--my-bg-color);
   color: var(--my-text-color);
   border-color: var(--my-border-color);
@@ -36,8 +36,12 @@ body {
   border-color: var(--my-border-color);
 }
 
-.nav-tabs .nav-link:hover {
+.nav-tabs .nav-link.active:hover {
   border-color: var(--my-border-color);
+}
+
+.nav-tabs .nav-link:hover {
+  border-color: transparent;
   color: var(--my-hover-color);
 }
 
