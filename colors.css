@@ -1,0 +1,92 @@
+/*I took some colors from the "One Dark Syntax" theme from atom*/
+:root {
+  --my-bg-color: #011627;
+  --my-title-color: hsl( 95, 38%, 62%);
+  --my-text-color: hsl(220, 14%, 71%); /*#F6F7F8;*/
+  --my-link-color: hsl( 29, 54%, 61%); /*#2EC4B6;*/
+  --my-hover-color: #FF3366;
+  --my-border-color: /**/hsl(187, 47%, 55%);/*/#2EC4B6;/*#20A4F3;*/
+}
+
+*:focus {
+  outline: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--my-title-color);
+}
+
+body {
+  background-color: var(--my-bg-color);
+  color: var(--my-text-color);
+  border-color: var(--my-border-color);
+}
+
+.nav-tabs {
+  border-color: var(--my-border-color);
+}
+
+.nav-tabs .nav-link.active:hover {
+  color: var(--my-link-color);
+}
+
+.nav-tabs .nav-link.active {
+  background-color: var(--my-bg-color);
+  color: var(--my-link-color);
+  border-color: var(--my-border-color);
+}
+
+.nav-tabs .nav-link:hover {
+  border-color: var(--my-border-color);
+  color: var(--my-hover-color);
+}
+
+.nav-tabs .nav-item.show .nav-link {
+  background-color: var(--my-bg-color);
+  color: var(--my-link-color);
+  border-color: var(--my-border-color);
+}
+
+.dropdown-item {
+  border-radius: 0px;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+}
+
+.dropdown-item:hover {
+  background-color: var(--my-bg-color);
+  color: var(--my-hover-color);
+  border-color: var(--my-border-color);
+}
+
+.nav-tabs .dropdown-menu {
+  background-color: var(--my-bg-color);
+  border-color: var(--my-border-color);
+}
+
+.nav-pills .nav-link.active {
+  background-color: var(--my-bg-color);
+  color: var(--my-link-color);
+  border-radius: 0px;
+  border-bottom: 1px solid var(--my-border-color);
+}
+
+.nav-pills .nav-link:focus {
+  text-decoration: inherit;
+}
+
+a:link {
+  color: var(--my-link-color);
+}
+
+a:hover {
+  color: var(--my-hover-color);
+}
+
+a:visited {
+  color: var(--my-link-color);
+}
+
+a:active {
+  color: var(--my-link-color);
+}
