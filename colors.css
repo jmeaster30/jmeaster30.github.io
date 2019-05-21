@@ -7,6 +7,12 @@
   --my-border-color: #2364AA;
 }
 
+/*
+ *
+ * Used for the heading part of the web page
+ *
+ */
+
 *:focus {
   outline: none;
 }
@@ -57,6 +63,16 @@ body {
   border-bottom: 1px solid transparent;
 }
 
+.dropdown-item.active:hover {
+  color: var(--my-link-color);
+}
+
+.dropdown-item.active {
+  background-color: var(--my-bg-color);
+  color: var(--my-link-color);
+  border-color: var(--my-border-color);
+}
+
 .dropdown-item:hover {
   background-color: var(--my-bg-color);
   color: var(--my-hover-color);
@@ -73,6 +89,14 @@ body {
   color: var(--my-link-color);
   border-radius: 0px;
   border-bottom: 1px solid var(--my-border-color);
+}
+
+.nav-pills .nav-link.active:hover {
+  color: var(--my-link-color);
+}
+
+.nav-pills .nav-link:hover {
+  color: var(--my-hover-color);
 }
 
 .nav-pills .nav-link:focus {
@@ -93,4 +117,29 @@ a:visited {
 
 a:active {
   color: var(--my-link-color);
+}
+
+/*
+ *
+ * Used in:
+ *  compilers.html
+ *
+ */
+
+.card {
+  background-color: var(--my-bg-color);
+  border-color: var(--my-border-color);
+}
+
+.card-header {
+  border-bottom: 1px solid var(--my-border-color);
+}
+
+.card-header .btn.btn-link:hover{
+  color: var(--my-hover-color);
+}
+
+.card-header .btn.btn-link{
+  color: var(--my-link-color);
+  text-decoration: none;
 }
