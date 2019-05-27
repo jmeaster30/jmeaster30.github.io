@@ -42,7 +42,7 @@
         <div class="col m-3">
           <div class="row">
             <div class="col">
-              <h3><a href="https://github.com/jmeaster30/cellular-automata" target="_blank">2D Cellular Automata Simulator</a></h3>
+              <h3><a href="#" target="_blank">C- (C Minus) Compiler</a></h3>
             </div>
           </div>
           <div class="row">
@@ -50,22 +50,15 @@
               <ul>
                 <li>
                   <h4><u>Description</u></h4>
-                  <p>This program allows you to simulate any 2d cellular automata that you can think of. The freedom of this simulator comes from the ability to embed a lua script with the instructions for your cellular automaton.</p>
-                </li>
-                <li>
-                  <h4><u>Examples</u></h4>
-                  <ul>
-                    <li><p><b>Conway's Game of Life</b>: the Conway's Game of Life cellular automaton is implemented in the conwaysgol.lua script.</p></li>
-                    <li><p><b>Langton's Ant</b>: the Langton's Ant cellular automaton is implemented in the langtonsant.lua script.</p></li>
-                    <li><p><b>Wireworld</b>: the Wireworld cellular automaton is implemented in the wireworld.lua script.</p></li>
-                    <li><p><b>Brian's Brain</b>: the Brain's Brain cellular automaton is implemented in the briansbrain.lua script.</p></li>
-                  </ul>
+                  <p>This compiler is not yet on Github. I made this compiler for my Compiler Design class in Spring 2019. We were told we could use any language we wanted for this project and we could even use Flex and Bison to generate the lexer and parser.
+                     To challenge myself, I chose to use C and to implement the lexer and parser by hand. One of the problems came from when I was turning the grammar we got for the language into an LL(1) grammar. I didn't read the grammar close enough and
+                      missed something so I had to kind of force in one rule. However, my bad fix seems to work so I might not go in and redo the grammar. The other problem is with code generation. I messed up with the symbol table when generating the assembly code.
+                      This causes local variables to not work at all; so, this is a crucial fix I need to make. Once this last problem is fixed the code for the compiler will be uploaded to github and this page will be updated
+                     </p>
                 </li>
                 <li>
                   <h4><u>Improvements</u></h4>
-                  <p>This program can probably be improved in many ways. I could think more about the controls and map them in a more thoughful way.
-                  But one of the biggest improvements I can think of is move the processing to the GPU since applying the rules for a cellular automata is highly parallelizable.
-                  I think I can implement this improvement by using opengl shaders or some other library that lets me talk to the GPU (CUDA or OpenCL).</p>
+                  <p>See Above.</p>
                 </li>
               </ul>
             </div>

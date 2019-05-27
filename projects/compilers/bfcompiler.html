@@ -42,7 +42,7 @@
         <div class="col m-3">
           <div class="row">
             <div class="col">
-              <h3><a href="https://github.com/jmeaster30/cellular-automata" target="_blank">2D Cellular Automata Simulator</a></h3>
+              <h3><a href="https://github.com/jmeaster30/bf-compiler" target="_blank">Brainf*ck Compiler and Interpreter</a></h3>
             </div>
           </div>
           <div class="row">
@@ -50,22 +50,16 @@
               <ul>
                 <li>
                   <h4><u>Description</u></h4>
-                  <p>This program allows you to simulate any 2d cellular automata that you can think of. The freedom of this simulator comes from the ability to embed a lua script with the instructions for your cellular automaton.</p>
-                </li>
-                <li>
-                  <h4><u>Examples</u></h4>
-                  <ul>
-                    <li><p><b>Conway's Game of Life</b>: the Conway's Game of Life cellular automaton is implemented in the conwaysgol.lua script.</p></li>
-                    <li><p><b>Langton's Ant</b>: the Langton's Ant cellular automaton is implemented in the langtonsant.lua script.</p></li>
-                    <li><p><b>Wireworld</b>: the Wireworld cellular automaton is implemented in the wireworld.lua script.</p></li>
-                    <li><p><b>Brian's Brain</b>: the Brain's Brain cellular automaton is implemented in the briansbrain.lua script.</p></li>
-                  </ul>
+                  <p>This program is a compiler and interpreter for the esoteric programming language Brainf*ck. I chose to stick to the original specs as much as possible.
+                    So, each cell is one byte in size but I didn't like the memory size restriction so I chose to dynamically allocate memory as needed so the programmer essentially has infinite memory.
+                    I wrote this twice (once in Java and once in C) just for the fun of it really. Currently, you can translate into C or compile into MIPS assembly in the future I hope to add more targets
+                    and actually output a runnable executable.</p>
                 </li>
                 <li>
                   <h4><u>Improvements</u></h4>
-                  <p>This program can probably be improved in many ways. I could think more about the controls and map them in a more thoughful way.
-                  But one of the biggest improvements I can think of is move the processing to the GPU since applying the rules for a cellular automata is highly parallelizable.
-                  I think I can implement this improvement by using opengl shaders or some other library that lets me talk to the GPU (CUDA or OpenCL).</p>
+                  <p>I can probably find more optimizations to implement which would make the output executable much faster. I can also use different code generation strategies to increase executable speeds.
+                     Currently, I am using a basic stack machine to do code generation so I can probably make it so I can load more than one cell from memory at a time to reduce the number of memory reads and writes.
+                     Adding more target platforms and actually producing a runnable executable would also be good improvements for this compiler.</p>
                 </li>
               </ul>
             </div>

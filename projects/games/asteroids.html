@@ -11,7 +11,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" type="text/css" href="../colors.css">
+    <link rel="stylesheet" type="text/css" href="../../colors.css">
 
   </head>
   <body>
@@ -25,14 +25,14 @@
         <div class="col">
           <ul class="nav nav-tabs">
             <li class="nav-item">
-              <a class="nav-link" href="../index.html">Home</a>
+              <a class="nav-link" href="../../index.html">Home</a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Projects</a>
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Projects</a>
               <div class="dropdown-menu">
-                <a class="dropdown-item" href="compilers.html">Compilers/Interpreters</a>
-                <a class="dropdown-item" href="ca.html">Cellular Automata</a>
-                <a class="dropdown-item active" href="#">Games</a>
+                <a class="dropdown-item" href="../compilers.html">Compilers/Interpreters</a>
+                <a class="dropdown-item" href="../ca.html">Cellular Automata</a>
+                <a class="dropdown-item" href="../games.html">Games</a>
               </div>
             </li>
           </ul>
@@ -40,21 +40,23 @@
       </div>
       <div class="row mt-3">
         <div class="col m-3">
-          <div class="accordian" id="games-acc">
-            <div class="card">
-              <div class="card-header" id="asteroids">
-                <h2 class="mb-0">
-                  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse-aster" aria-expanded="false" aria-controls="collapse-aster">
-                    Asteroids
-                  </button>
-                </h2>
-              </div>
-              <div class="collapse" aria-labelledby="asteroids" data-parent="#games-acc" id="collapse-aster">
-                <div class="card-body">
-                  <a href="games/asteroids.html" class="btn btn-primary" role="button">Project Page</a>
-                  The classic arcade game Asteroids written in C++ using the SDL graphics library.
-                </div>
-              </div>
+          <div class="row">
+            <div class="col">
+              <h3><a href="https://github.com/jmeaster30/asteroids" target="_blank">Asteroids</a></h3>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <ul>
+                <li>
+                  <h4><u>Description</u></h4>
+                  <p>This is the classic arcade game Asteroids written in C++. I used the SDL graphics library for rendering to the screen and key inputs.</p>
+                </li>
+                <li>
+                  <h4><u>Improvements</u></h4>
+                  <p>I can easily implement a high score system and probably even a leaderboards system. Another improvement could be drawing optimizations which could (in the extreme case) mean migrating over to OpenGL.</p>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
