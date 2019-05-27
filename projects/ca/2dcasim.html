@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>My Website!!</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" type="text/css" href="../../colors.css">
+
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row mt-1">
+        <div class="col">
+          <h1 class="title">John Easterday</h1>
+        </div>
+      </div>
+      <div class="row mt-1">
+        <div class="col">
+          <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a class="nav-link" href="../../index.html">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Projects</a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="../compilers.html">Compilers/Interpreters</a>
+                <a class="dropdown-item" href="../ca.html">Cellular Automata</a>
+                <a class="dropdown-item" href="../games.html">Games</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col m-3">
+          <div class="row">
+            <div class="col">
+              <h3><a href="https://github.com/jmeaster30/cellular-automata" target="_blank">2D Cellular Automata Simulator</a></h3>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <ul>
+                <li>
+                  <h4><u>Description</u></h4>
+                  <p>This program allows you to simulate any 2d cellular automata that you can think of. The freedom of this simulator comes from the ability to embed a lua script with the instructions for your cellular automaton.</p>
+                </li>
+                <li>
+                  <h4><u>Examples</u></h4>
+                  <ul>
+                    <li><p><b>Conway's Game of Life</b>: the Conway's Game of Life cellular automaton is implemented in the conwaysgol.lua script.</p></li>
+                    <li><p><b>Langton's Ant</b>: the Langton's Ant cellular automaton is implemented in the langtonsant.lua script.</p></li>
+                    <li><p><b>Wireworld</b>: the Wireworld cellular automaton is implemented in the wireworld.lua script.</p></li>
+                    <li><p><b>Brian's Brain</b>: the Brain's Brain cellular automaton is implemented in the briansbrain.lua script.</p></li>
+                  </ul>
+                </li>
+                <li>
+                  <h4><u>Improvements</u></h4>
+                  <p>This program can probably be improved in many ways. I could think more about the controls and map them in a more thoughful way.
+                  But one of the biggest improvements I can think of is move the processing to the GPU since applying the rules for a cellular automata is highly parallelizable.
+                  I think I can implement this improvement by using opengl shaders or some other library that lets me talk to the GPU (CUDA or OpenCL).</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
