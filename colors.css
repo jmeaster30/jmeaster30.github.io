@@ -144,6 +144,10 @@ a:active {
   text-decoration: none;
 }
 
+.card-body .btn.btn-primary:focus{
+  background-color: var(--my-bg-color);
+}
+
 .card-body .btn.btn-primary:hover{
   color: var(--my-hover-color);
 }
