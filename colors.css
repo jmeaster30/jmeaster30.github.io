@@ -119,12 +119,15 @@ a:active {
   color: var(--my-link-color);
 }
 
-/*
- *
- * Used in:
- *  compilers.html
- *
- */
+/********************************/
+
+li h5 {
+  color: var(--my-hover-color);
+}
+
+li h4 {
+  color: var(--my-hover-color);
+}
 
 .card {
   background-color: var(--my-bg-color);

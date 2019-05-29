@@ -53,6 +53,64 @@
                   <p>This program allows you to simulate any 2d cellular automata that you can think of. The freedom of this simulator comes from the ability to embed a lua script with the instructions for your cellular automaton.</p>
                 </li>
                 <li>
+                  <h4><u>Usage</u></h4>
+                  <ul>
+                    <li>
+                      <h5>Running the Simulator</h5>
+                      <p>
+                        To build this simulator you need OpenGL and the GLUT libraries. Installing freeglut should be satisfactory. You also need the LUA C/C++ API installed. The download instructions are on the lua website.
+                        Once you have all of that installed and you run 'make', you can run one of the examples.
+                        So, assuming you cloned the project from git and just ran make, you should be in the directory with the simulator program and the folder named 'automata' should have some example scripts in it.
+                      </br></br>
+                        To run the Conway's Game of Life cellular automaton you should run the command:
+                        <blockquote class="blockquote">
+                          <p class="m-2"><b>./casim conwaysgol.lua</b></p>
+                        </blockquote>
+                        Once you run that command, a window will pop up and you can then play with the Game of Life CA.
+                      </p>
+                    </li>
+                    <li>
+                      <h5>Simulator Controls</h5>
+                      <p>There are some controls you have to experiment with your cellular automaton.</p>
+                      <blockquote class="blockquote">
+                        <ul class="m-2">
+                          <li><b>Arrow Keys:</b> Changes the selected state (the color of the current state is shown with a dot at the mouse position. this also serves to show where the user is pointing on the grid)</li>
+                          <li><b>WASD Keys:</b> Moves the camera around</li>
+                          <li><b>Mouse Scroll:</b> Controls how zoomed in the camera is.</li>
+                          <li><b>Left Click:</b> Sets the cell that the mouse is over to the selected state.</li>
+                          <li><b>C:</b> Sets every cell's state to zero. Essentially clearing the grid.</li>
+                          <li><b>R:</b> Sets every cell to a random state.</li>
+                          <li><b>E:</b> Advances the grid one generation based on the provided rules.</li>
+                          <li><b>Space:</b> Starts and stops the simulation. (A message pops up in the console for when the simulation is running of stopped)</li>
+                        </ul>
+                      </blockquote>
+                      </br>
+                    </li>
+                    <li>
+                      <h5>Making a Runnable Lua Script</h5>
+                      <p>The barebones runnable lua script has only a "process" function specified below. You can also add in some extra variables that control various things like how many cells are in a grid to the color of the states to how many states there are. I really wanted to make this simulator as open ended as possible. The following is a list of optional variables you can include to change how the simulator runs.</p>
+                      <blockquote class="blockquote">
+                        <ul class="m-2">
+                          <li><b>win_title = "Cellular Automata"</b> --the title of the window</li>
+                          <li><b>win_width = 640</b> --the width in pixels of the window</li>
+                          <li><b>win_height = 480</b> --the height in pixels of the window</li>
+                          <li><b>move_speed = 2.0</b> --the movement speed of the camera</li>
+                          <li><b>zoom_speed = 5.0</b> --the zoom speed of the camera</li>
+                          <li><b>cell_size = 20</b> --the width and height of one cell</li>
+                          <li><b>cells_wide = win_width / cell_size</b> --the width of the grid in cells</li>
+                          <li><b>cells_high = win_height / cell_size</b> --the height of the grid in cells</li>
+                          <li><b>num_of_states = 2</b> --the number of states each cell can be</li>
+                          <li><b>state_colors = { "FFFFFF", "000000" }</b> --the colors (in hex) of the state (low-high). this array must have at least num_of_states number of elements.</li>
+                          <li><b>kernel_width = 3</b> --the width of the kernel_width or neighborhood centered on the current cell</li>
+                          <li><b>kernel_height = 3</b> --the height of the kernel or neighborhood centered on the current cell</li>
+                          <li><b>get_neighbors = false</b> --when false you get a lua array of the number of neighbors of each state. when true you get a 1d lua array of the entire kernel</li>
+                          <li><b>updates_per_second = 60</b> --this controls how frequently the grid updates</li>
+                        </ul>
+                      </blockquote>
+                    </li>
+                  </ul>
+                </li>
+                <li>
                   <h4><u>Examples</u></h4>
                   <ul>
                     <li><p><b>Conway's Game of Life</b>: the Conway's Game of Life cellular automaton is implemented in the conwaysgol.lua script.</p></li>
