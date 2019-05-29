@@ -57,11 +57,35 @@
                 </li>
                 <li>
                   <h4><u>Usage</u></h4>
-                  <p>./chess</br>--or--</br>./chess [player 1 name] [player 2 name]</p>
+                  <ul>
+                    <li>
+                      <h5>Building the program</h5>
+                      <p>This chess game only uses the standard c libraries so you just need to run 'make'</p>
+                    </li>
+                    <li>
+                      <h5>Running the program</h5>
+                      <blockquote class="blockquote">
+                        <ul class="m-2">
+                          <li><b>./chess</b> You will be prompted for player names</li>
+                          <li><b>./chess [Player 1 Name] [Player 2 Name]</b></li>
+                        </ul>
+                      </blockquote>
+                    </li>
+                    <li>
+                      <h5>Commands</h5>
+                      <blockquote class="blockquote">
+                        <ul class="m-2">
+                          <li><b>move [src] [dest]</b> moves the piece from [src] to [dest]. The piece must be one of your pieces and must be able to move to the [dest] space</li>
+                          <li><b>help [loc]</b> provides a list of possible moves the piece at [loc] can move to.</li>
+                          <li><b>quit</b> quits the game</li>
+                        </ul>
+                      </blockquote>
+                    </li>
+                  </ul>
                 </li>
                 <li>
                   <h4><u>Improvements and Future Additions</u></h4>
-                  <p>Currently the commands you enter are just some standard I came up with but I learned about Algebraic Notation for chess so I'm thinking about converting the commands to that.
+                  <p>Currently, the commands you enter are just something I came up with but I learned about Algebraic Notation for chess so I'm thinking about converting the commands to that.
                      The algebraic notation will also help with a feature I want to add where users can save, load, and playback games.
                      Since, this chess notation is pretty standard in chess programs the user could even load games from this program into another program or vice versa.</p>
                 </li>

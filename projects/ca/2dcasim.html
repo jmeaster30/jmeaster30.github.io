@@ -107,6 +107,22 @@
                           <li><b>updates_per_second = 60</b> --this controls how frequently the grid updates</li>
                         </ul>
                       </blockquote>
+                      <p>The only thing required in the lua script is a function called "process" that takes 2 parameters and returns an integer in the range [0, num_of_states). The first parameter is an integer representing the state of the cell currently being processed.
+                        If get_neighbors is true then the second parameter will be an array of length kernel_width * kernel_height and contain the values of all the states inside the current kernel. Note: this is a one-dimensional array of two-dimensional data it is organized as such so indexing isn't hard.
+                        If get_neighbors is false then the second parameter will be an array of length num_of_states and at each index of the array is the number of neighbors with the state equal to that index (I'll try to think of a better way to say that).
+                        Here is a super basic process function:
+                        <blockquote class="blockquote"><pre>
+<code>
+function process(curr_state, neighbor_counts)
+  local new_state = 0
+  --you can have anything you want in here
+  --as long as you return a number that represents a certain state
+  return new_state
+end
+</code>
+                          </pre>
+                        </blockquote>
+                      </p>
                     </li>
                   </ul>
                 </li>

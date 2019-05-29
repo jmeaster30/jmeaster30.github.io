@@ -129,6 +129,10 @@ li h4 {
   color: var(--my-hover-color);
 }
 
+pre code {
+  color: var(--my-text-color);
+}
+
 .card {
   background-color: var(--my-bg-color);
   border-color: var(--my-border-color);
