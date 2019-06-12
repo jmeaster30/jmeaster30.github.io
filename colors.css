@@ -4,6 +4,7 @@
   --my-text-color: #D3D4D9;/*#A2A79E;*/
   --my-link-color: #EFCB68;/*hsl( 29, 54%, 61%); /*#2EC4B6;*/
   --my-hover-color: /*hsl(355, 65%, 65%);hsl( 5, 48%, 51%);*/#FF3366;
+  --my-header-color: #FF3366;
   --my-border-color: #2364AA;
 }
 
@@ -17,8 +18,12 @@
   outline: none;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1{
   color: var(--my-title-color);
+}
+
+h2, h3, h4, h5, h6{
+  color: var(--my-header-color);
 }
 
 body {
