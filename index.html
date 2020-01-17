@@ -1,185 +1,34 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>John Easteday's Website</title>
+    <title>John Easterday's Website</title>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 
-    <link rel="stylesheet" type="text/css" href="colors.css">
-
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    
+    <link href="style.css" rel="stylesheet">
   </head>
   <body>
-    <div class="container-fluid">
-      <div class="row mt-1">
-        <div class="col">
-          <h1 class="title">John Easterday</h1>
-        </div>
-      </div>
-      <div class="row mt-1">
-        <div class="col">
-          <ul class="nav nav-tabs">
-            <li class="nav-item">
-              <a class="nav-link active" href="#">Home</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Projects</a>
-              <div class="dropdown-menu">
-                <a class="dropdown-item" href="projects/compilers.html">Compilers/Interpreters</a>
-                <a class="dropdown-item" href="projects/ca.html">Cellular Automata</a>
-                <a class="dropdown-item" href="projects/games.html">Games</a>
-                <a class="dropdown-item" href="projects/other.html">Other Stuff</a>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="row mt-3">
-        <div class="col m-3">
-          <ul class="nav nav-pills mb-3" id="home-tab" role="tablist">
-            <li class="nav-item">
-              <a class="nav-link active" id="education-tab" data-toggle="pill" href="#education" role="tab" aria-controls="education" aria-selected="true">Education</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" id="interests-tab" data-toggle="pill" href="#interests" role="tab" aria-controls="interests" aria-selected="false">CS/Math Interests</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" id="hobbies-tab" data-toggle="pill" href="#hobbies" role="tab" aria-controls="hobbies" aria-selected="false">Hobby Interests</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="row mt-1">
-        <div class="col mx-3">
-          <div class="tab-content" id="home-tab-content">
-            <div class="tab-pane fade show active" id="education" role="tabpanel" aria-labelledby="education-tab">
-              <p>
-                I am currently a senior at the University of Pittsburgh. I am in both the Dietrich School of Arts and Sciences (Math) and the School of Computing and Information (Computer Science). My expected graduation date is April of 2020.
-              </p>
-              <p>
-                <h5><b>Degrees</b></h5>
-                <ul>
-                  <li>Bachelor's of Science in <b><i>Computer Science</i></b> (2020)</li>
-                  <li>Bachelor's of Science in <b><i>Mathematics</i></b> (2020)</li>
-                </ul>
-              </p>
-              <h5><b>Computer Science</b></h5>
-              <p>
-                I started college with the Introductory Java Programming course completed because I scored a 4 on the AP Computer Science exam; however, I did not take AP Computer Science in high school (or ever) and
-                I did not know Java when I took the exam, I mainly knew C++ from self-teaching and my dual-enrollment C++ class at Penn State York (I had taught myself C++ before this class but it taught me some good practices I hadn't known).
-                Since I still have a Computer Science knowledge itch I need to scratch, I hope to go to graduate school for computer science to learn even more in topics that I couldn't fit in my undergraduate studies.
-                <br>The core computer science courses I have taken include:
-                <ul>
-                  <li>Logic</li>
-                  <li>Data Structures (Java)</li>
-                  <li>Algorithms (Java)</li>
-                  <li>Computer Organization (MIPS Assembly)</li>
-                  <li>Systems Software (C)</li>
-                  <li>Operating Systems (C)</li>
-                  <li>Intro Computation Theory</li>
-                </ul>
-                Then I took some elective classes (I still have a couple more elective classes to take) that included:
-                <ul>
-                  <li>Programming for Web Applications (HTML, CSS, Javascript, Python)</li>
-                  <li>Compiler Design (C)</li>
-                  <li>Quality Assurance (Scheduled for Fall 2019)</li>
-                  <li>Applied Cryptography (Scheduled for Fall 2019)</li>
-                </ul>
-              </p>
-              <h5><b>Mathematics</b></h5>
-              <p>
-                I started college with Calculus 1 and 2 completed since I got a 5 on the AP Calc BC exam with a Calc AB Subscore of a 5.
-                I finished all the required math courses for my math degree in my junior year.
-                Again, I have a desire for more math knowledge so I am hoping to attend graduate school.
-                <br>The core math classes I have taken include:
-                <ul>
-                  <li>Calculus 3</li>
-                  <li>Differential Equations</li>
-                  <li>Linear Algebra</li>
-                  <li>Intro to Theoretical Math (Logic, Set Theory, Series and Sequences, Basics to Proof Writing)</li>
-                  <li>Intro to Analysis (Theoretical Calculus)</li>
-                  <li>Intro to Abstract Algebraic Systems (Group Theory, Ring Theory)</li>
-                </ul>
-                Then I took some elective classes including:
-                <ul>
-                  <li>Topics in Geometry</li>
-                  <li>Elementary Number Theory</li>
-                  <li>Mathematical Cryptography</li>
-                  <li>Abstract Algebra (Galois Theory)</li>
-                </ul>
-              </p>
-            </div>
-            <div class="tab-pane fade" id="interests" role="tabpanel" aria-labelledby="interests-tab">
-              <ul>
-                <li>
-                  <h5><b>Cryptography</b></h5>
-                  <p>
-                    My Mathematical Cryptography class got me interested in cryptography.
-                    Elliptic curve cryptography was awesome because elliptic curve addition is so unlike regular addition and I found it interesting that using elliptic curves over finite fields allowed for equivalent security to regular RSA encryption with smaller key sizes.
-                    We didn't learn about quantum algorithms but we discussed Shor's Algorithm and how quantum computers will break the cryptosystems we currently use, so I have been interested in quantum-proof cryptosystems and learning as much as I can about quantum computers and quantum algorithms in my free time.
-                  </p>
-                </li>
-                <li>
-                  <h5><b>P versus NP</b></h5>
-                  <p>
-                    My Intro to Computation Theory class (and my Mathematical Cryptography class since we covered Integer Factorization Algorithms and Disrete Log Algorithms) got me interested in the P versus NP problem.
-                    I had known about the problem back in high school from hearing about the Millennium Prize Problems and this problem is partly my motivation for studying both math and computer science.
-                    It would be amazing if I (or anyone really) could solve this problem one day. Also, My Intro to Computation Theory professor told my class that none of us (or he said no one in general) is going to solve P versus NP
-                    and I don't like when someone says I can't do something without reasonable proof that I can't do it so I want to solve P versus NP and prove him wrong.
-                  </p>
-                </li>
-                <li>
-                  <h5><b>Collatz Conjecture</b></h5>
-                  <p>
-                    The Collatz Conjecture is also an interesting problem to me. I learned about this problem thorugh my personal research of math topics and fell in love because it is so simple to describe yet it has not been proven and mathematicians say we haven't even developed the math necessary to prove this problem yet.
-                  </p>
-                </li>
-                <li>
-                  <h5><b>Computer Algebra Systems</b></h5>
-                  <p>
-                    Since I have learned how to program, I liked making programs that would automate tasks that I know I could do but hated doing because they took too long and Computer Algebra Systems helped me a lot in my math and science classes when I got lazy.
-                    My abstract algebra classes were the only times where we had to use a computer algebra system because the problem would have been too hard and time-consuming to do by hand. Since I have started using them, I have been very interested in the way they work and the algorithms they use.
-                    I still don't know much about how they work but I have been trying to learn as much as I can by my own research. I have been experimenting mostly with Mathematica but I have been looking into the Sage computer algebra system.
-                  </p>
-                </li>
-                <li>
-                  <h5><b>Compilers, Interpreters, and Programming Language Design</b></h5>
-                  <p>
-                    Since I started learning how to program I have been interested in how compilers and interpreters work and how programming languages are made. My class on Compiler Design gave me practice in how to go about designing a grammar for a language and implementing all of the parts to a compiler.
-                    For that class we were allowed to use tools that automated the process for us but I decided to implement all the algorithms by hand and I learned a lot about how compilers work from that.
-                    I also have written a couple interpreters for various esoteric programming languages including: Brainf*ck, Befunge-93, and Malbolge.
-                  </p>
-                </li>
-              </ul>
-            </div>
-            <div class="tab-pane fade" id="hobbies" role="tabpanel" aria-labelledby="hobbies-tab">
-              <ul>
-                <li>
-                  <h5><b>Making Video Games</b></h5>
-                  <p>
-                    I like making games because they are fun and I always learn some new programming concept or think of some programming concept I need to explore more from making them. There are a ton of interesting challenges like balance and managing the interactions between dynamic systems.
-                    Also, I like how making games is not just a purely programming challenge it ties in problems in psychology, sociology, math, and possibly even more areas depending on the game being made.
-                    I have used various game engines including: Unity, Unreal Engine, Game Maker Studio, RPG Maker VX Ace (and MV), and a few other smaller engines. However, I really like making games from the ground up because I like knowing how everything works in my programs.
-                  </p>
-                </li>
-                <li>
-                  <h5><b>Films and Video Editing</b></h5>
-                  <p>
-                    In high school, I was in the TV Production series of classes and in the Video Production Club. Our Video Production Club even participated in the film competitions at the Student Television Network convention.
-                    The last two years I went, My team for the competition won second place in the Sitcom category. The first time we won I was one of the camera operators but the second time we won (and my last year going to the convention)
-                    I was the sole editor and sound designer for our video submission. I love the story telling side of film-making; however, editing the video was my favorite part and I was really interested in how video editing programs worked and how they programmed all of the effects.
-                  </p>
-                </li>
-              </ul>
-            </div>
+    <div id="desktop" class="container">
+      
+    </div>
+    <footer class="footer">
+      <div class="container-fluid" id="taskbar">
+        <div class="start-btn"> 
+          <button type="button" class="btn btn-secondary btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="taskbar-name">Start</span>
+          </button>
+          <div class="dropdown-menu" id="menu">
+            fuck
           </div>
         </div>
       </div>
-    </div>
+    </footer>
   </body>
 </html>

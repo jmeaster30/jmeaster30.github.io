@@ -1,0 +1,94 @@
+:root {
+  --taskbar-total-height: 50px;
+  --taskbar-height: calc(var(--taskbar-total-height) - var(--taskbar-border-size) - var(--taskbar-border-size));
+  --taskbar-border-size: 3px;
+  
+  --taskbar-width: calc(100vw - var(--taskbar-border-size) - var(--taskbar-border-size));
+  --taskbar-btn-width: 75px;
+
+  --taskbar-icon-width: 19px;
+  --taskbar-icon-height: 19px;
+
+  --taskbar-highlight: #d4ccd4;
+  --taskbar-color: #c1bbc1;
+  --desktop-bg-color: #004e98;
+}
+
+body {
+  max-height: 100vh;
+  max-width: 100vw;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: var(--taskbar-width);
+  height: var(--taskbar-height);
+  line-height: var(--taskbar-height);
+  background-color: var(--taskbar-color);
+  border: var(--taskbar-border-size) outset var(--taskbar-highlight);
+}
+
+#taskbar {
+  margin: 0;
+  padding: 0;
+}
+
+.start-btn{
+  margin-left: 3px;
+  margin-top: -5px; 
+}
+
+.btn-sm {
+  padding: 0;
+  height: calc(2 * var(--taskbar-total-height) / 3);
+  width: var(--taskbar-btn-width);
+  align: left;
+}
+
+.btn-secondary:hover {
+  background-color: var(--taskbar-color);
+  border: var(--taskbar-border-size) outset var(--taskbar-highlight);
+  border-radius: 0px;
+  color: #444;
+  vertical-align: middle;
+}
+
+
+.btn-secondary:focus {
+  background-color: calc(#FFF - var(--taskbar-color));
+  border: var(--taskbar-border-size) inset calc(#FFF - var(--taskbar-highlight));
+  border-radius: 0px;
+  color: #000;
+  vertical-align: middle;
+  box-shadow: none;
+}
+
+.btn-secondary {
+  background-color: var(--taskbar-color);
+  border: var(--taskbar-border-size) outset var(--taskbar-highlight);
+  border-radius: 0px;
+  color: #444;
+  vertical-align: middle;
+}
+
+.taskbar-icon {
+  margin-left: -15px;
+  margin-top: -4px;
+  width: var(--taskbar-icon-width);
+  height: var(--taskbar-icon-height);
+}
+i
+.taskbar-name {
+  width: var(--taskbar-btn-width);
+  text-align: center;
+}
+
+#desktop {
+  width: 100vw;
+  max-width: var(--taskbar-width);
+  height: calc(100vh - var(--taskbar-height));
+  margin: 0;
+  background-image: url("imgs/space.gif");
+  background-repeat: repeat;
+}
