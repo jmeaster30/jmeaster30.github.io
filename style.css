@@ -1,20 +1,20 @@
 :root {
-  --desktop-bg-color: #004e98;
-}
+  --desktop-bg-img: url("imgs/cool_back.gif");
 
-@font-face {
-  font-family: coolGlitchy;
-  src: url("fonts/positive_system.otf");
-}
+  --footer-bg-img: url("imgs/binary.gif");
+  --footer-font: "Courier New", Courier, monospace;
+  --footer-height: 7vh; /* should always be in viewport height percent*/
 
-@font-face{
-  font-family: cubic;
-  src: url("fonts/cubic.ttf");
-}
+  --header-bg-img: url("imgs/matrix.gif");
+  --header-font: "Courier New", Courier, monospace;
+  --header-height: 7%; /* can be whatever unit */
+  --header-color: red;
 
-@font-face{
-  font-family: pixelmania;
-  src: url("fonts/pixelmania.ttf");
+  --body-bg-img: url("imgs/space.gif");
+  --body-font: "Courier New", Courier, monospace;
+
+  --border-color: #DDD;
+  --button-color: #BBB;
 }
 
 body {
@@ -25,12 +25,11 @@ body {
 
 #desktop {
   width: 100vw;
-  max-width: 100vw;
   overflow: hidden;
-  height: 95vh;
+  height: calc(100vh - var(--footer-height));
   margin: 0;
   padding: 2%;
-  background-image: url("imgs/cool_back.gif");
+  background-image: var(--desktop-bg-img);
   background-repeat: repeat;
 }
 
@@ -38,56 +37,56 @@ body {
   width: 100%;
   height: 100%;
   display: block;
-  background-color: #f0f;
-  border: 7px outset #DDDDDD; 
-  text-align: center;
+  border: 4px outset var(--border-color); 
 }
 
 #footer {
-  height: 5vh;
   width: 100vw;
   max-width: 100vw;
-  margin: 0;
-  padding: 15px;
+  height: var(--footer-height);
+  padding: 12px;
   overflow: hidden;
   display: flex;
-  background-image: url("imgs/binary.gif");
+  background-image: var(--footer-bg-img);
   background-repeat: repeat;
-  border: 7px outset #DDD;
+  border: 4px outset var(--border-color);
+  font-family: var(--footer-font);
 }
 
 #window-header {
-  height: 6%;
   width: 100%;
-  border: 7px inset #DDD;
-  background-image: url("imgs/matrix.gif");
+  height: var(--header-height);
+  border: 4px inset var(--border-color);
+  background-image: var(--header-bg-img);
   background-repeat: repeat;
   text-align: left;
-  font-family: monospace;
-  color: red;
-  font-size: 400%;
+  font-family: var(--header-font);
+  color: var(--header-color);
   vertical-align: middle;
 }
 
 #window-body {
   width: 100%;
-  height: 94%;
-  background-image:url("imgs/space.gif");
+  height: calc(100% - var(--header-height));
+  background-image: var(--body-bg-img);
   background-repeat: repeat;
-  border: 7px inset #DDD;
+  border: 4px inset var(--border-color);
   text-align: center;
-  font-family: coolGlitchy;
-  font-size: 600%;
+  font-family: var(--body-font);
   color: green;
 }
 
-#start_btn {
-  height: 100%;
+.my_nav_btn {
+  display: flex;
   width: auto;
-  background-color: #BBB;
-  border: 7px outset #DDD;
+  border: 4px outset var(--border-color);
   text-align: center;
   padding: 5px;
-  font-family: cubic;
+  margin-right: 12px;
+  background-color: var(--button-color);
   vertical-align: middle;
+}
+
+.my_nav_btn > * {
+  margin-right: 2px;
 }
