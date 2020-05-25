@@ -1,3 +1,4 @@
+page_script = {}
 page_script = {
   "album_limit": 10,
   "clinton_width": 1076, //main pic width in pixels
