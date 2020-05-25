@@ -1,7 +1,7 @@
 var page_script;
 
 $(document).ready(function(){
-  unloadScript();
+  //unloadScript();
   loadPage("home.html"); //load the home page in to start
 
   //get css custom property
@@ -35,7 +35,7 @@ $(document).ready(function(){
   //repos
   $("#repos_btn").click(function(){
     console.log("repositories clicked");
-    unloadScript();
+    //unloadScript();
     loadPage("repo_page.html");
     loadScript("repo_page.js");
   });
@@ -43,7 +43,7 @@ $(document).ready(function(){
   //demos
   $("#demos_btn").click(function(){
     console.log("demos button clicked");
-    unloadScript();
+    //unloadScript();
     loadPage("demo_page.html");
     loadScript("demo_page.js");
   });

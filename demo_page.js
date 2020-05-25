@@ -1,13 +1,13 @@
 $("#spotify").click(function(){
-  unloadScript();
+  //unloadScript();
   //load the spotify page
   loadPage("demos/spotify.html");
   //load the spotify script
-  loadScript("demos/spotify.js");
+  //loadScript("demos/spotify.js");
 });
 
 $("#geometry").click(function(){
-  unloadScript();
+  //unloadScript();
   //load the geometry page
   //load the geometry script
 });
