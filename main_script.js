@@ -1,6 +1,6 @@
 $(document).ready(function(){
-  console.log("ready!");
-  
+  loadPage("home.html"); //load the home page in to start
+
   //get css custom property
   var style = getComputedStyle(document.body);
   var border_color_u = style.getPropertyValue('--border-color-up');
@@ -46,14 +46,8 @@ $(document).ready(function(){
   });
 });
 
-let loadPage = function(local_url){
-  var matches = location.pathname.match(/[\s\S]*jmeaster30.github.io($|\/)/);
-  console.log(matches);
-  
-  var url_start = "https://jmeaster30.github.io/";
-  //if(url_start[url_start.length - 1] != '/') {
-  //  url_start = url_start + "/";
-  //}
+let loadPage = function(local_url){ 
+  var url_start = "https://jmeaster30.github.io/"; //this being hard coded gives me bad vibes but it works
   var full_url = url_start + local_url;
   $.get(full_url, function(data){
     $("#window").html(data);
