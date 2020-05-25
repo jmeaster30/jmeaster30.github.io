@@ -47,10 +47,13 @@ $(document).ready(function(){
 });
 
 let loadPage = function(local_url){
-  var url_start = location.pathname.match(/[\s\S]*jmeaster30.github.io($|\/)/)[0];
-  if(url_start[url_start.length - 1] != '/') {
-    url_start = url_start + "/";
-  }
+  var matches = location.pathname.match(/[\s\S]*jmeaster30.github.io($|\/)/);
+  console.log(matches);
+  
+  var url_start = "https://jmeaster30.github.io/";
+  //if(url_start[url_start.length - 1] != '/') {
+  //  url_start = url_start + "/";
+  //}
   var full_url = url_start + local_url;
   $.get(full_url, function(data){
     $("#window").html(data);
