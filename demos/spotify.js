@@ -1,195 +1,161 @@
-page_script = {} //this is so we can reference variables that are declared in the object from other variables inside the object
-page_script = {
+let clinton_width = 1076; //main pic width in pixels
+let clinton_height = 1356; //main pic height in pixels
+let clinton_scale = 0.5;
+let clinton_file = "https://cdn.kapwing.com/video_image-vb_12UTqn.png";
 
-  "Point": function(x, y)
+let album_boundaries = [new Quad(new Point(236, 473), //top left
+                                 new Point(615, 591), //top right
+                                 new Point(133, 827), //bottom left
+                                 new Point(488, 956))  //bottom right
+                       ];
+
+/*
+ *  DO NOT EDIT ANYTHING BELOW THIS COMMENT UNLESS YOU KNOW WHAT YOU ARE DOING
+ */
+
+var clinton_img;
+var albums = [];
+
+var auth_token = null;
+var auth_status = "";
+
+function get_auth()
+{  
+  console.log("Sending Spotify Auth Request.");
+  var client_auth_cred = "ZjAxYjlmMTJiMDk2NGYzYmJiY2E3YzE3YzQxN2RlYjE6NTU0MjEzNTlkYzRkNGM2NWFlMmFjMTJmNzlmMzA1MjQ=";
+  
+  const Http = new XMLHttpRequest();
+  const url='https://accounts.spotify.com/api/token';
+  
+  Http.open("POST", url);
+  
+  //set headers
+  Http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  Http.setRequestHeader("Authorization", "Basic " + client_auth_cred);
+  
+  Http.send("grant_type=client_credentials");
+  auth_status = "WAITING";
+  
+  Http.onreadystatechange = (e)=>{
+    if(Http.status == 200)
     {
-      return {'x': x, 'y': y};
-    },
-  "Quad": function(top_left, top_right, bottom_left, bottom_right)
-    {
-      return { 'top_left': top_left,
-               'top_right': top_right,
-               'bottom_left': bottom_left,
-               'bottom_right': bottom_right };
-    },
-  "Album": function(bounding_quad, image)
-    {
-      return {
-        'b_quad': bounding_quad,
-        'image': image,
-        'setImage': function(image) {
-          this.image = image;
-        },
-        'draw': function(scale) {
-          noStroke();
-          if(this.image) {
-            texture(this.image);
-            quad(this.b_quad.top_left.x * scale, this.b_quad.top_left.y * scale,
-                 this.b_quad.top_right.x * scale, this.b_quad.top_right.y * scale,
-                 this.b_quad.bottom_right.x * scale, this.b_quad.bottom_right.y * scale,
-                 this.b_quad.bottom_left.x * scale, this.b_quad.bottom_left.y * scale);
-          }
-        }
+      var json_response = JSON.parse(Http.responseText);
+      if(json_response){
+        console.log("Auth Successful");
+        auth_token = json_response.token_type + " " + json_response.access_token;
+        auth_status = "SUCCESS";
+      } else {
+        console.log("JSON parse error");
+        auth_token = null;
+        auth_status = "ERROR";
       }
-    },
-
-  "album_limit": 10,
-  "clinton_width": 1076, //main pic width in pixels
-  "clinton_height": 1356, //main pic height in pixels
-  "clinton_scale": 0.5,
-  "clinton_file": "https://cdn.kapwing.com/video_image-vb_12UTqn.png",
-
-  "album_boundaries": [page_script.Quad(page_script.Point(236, 473), //top left
-                                        page_script.Point(615, 591), //top right
-                                        page_script.Point(133, 827), //bottom left
-                                        page_script.Point(488, 956))  //bottom right
-                      ],
-
-  //the stuff below this should not be edited
-  "clinton_img": null,
-  "albums": [],
-
-  "auth_token": null,
-  "auth_status": "",
-
-  "get_auth": function()
-    {  
-      console.log("Sending Spotify Auth Request.");
-      var client_auth_cred = "ZjAxYjlmMTJiMDk2NGYzYmJiY2E3YzE3YzQxN2RlYjE6NTU0MjEzNTlkYzRkNGM2NWFlMmFjMTJmNzlmMzA1MjQ=";
-  
-      const Http = new XMLHttpRequest();
-      const url='https://accounts.spotify.com/api/token';
-  
-      Http.open("POST", url);
-  
-      //set headers
-      Http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-      Http.setRequestHeader("Authorization", "Basic " + client_auth_cred);
-    
-      Http.send("grant_type=client_credentials");
-      page_script.auth_status = "WAITING";
-  
-      Http.onreadystatechange = (e)=>{
-        if(Http.status == 200)
-        {
-          var json_response = JSON.parse(Http.responseText);
-          if(json_response){
-            console.log("Auth Successful");
-            page_script.auth_token = json_response.token_type + " " + json_response.access_token;
-            page_script.auth_status = "SUCCESS";
-          } else {
-            console.log("JSON parse error");
-            page_script.auth_token = null;
-            page_script.auth_status = "ERROR";
-          }
-        }
-        else
-        {
-          console.log("Request error code: " + Http.status);
-          page_script.auth_token = null;
-          page_script.auth_status = "ERROR";
-        } 
-      }
-    },
-
-  "auth_wait": function()
+    }
+    else
     {
-      if(page_script.auth_status === "WAITING") {
-        setTimeout(page_script.auth_wait(), 100);
-      }
-    },
+      console.log("Request error code: " + Http.status);
+      auth_token = null;
+      auth_status = "ERROR";
+    }
+  }
+}
+
+function auth_wait()
+{
+  if(auth_status === "WAITING")
+  {
+    setTimeout(auth_wait(), 100);
+  }
+}
 
 //search functions
-  "search": function()
+function search()
+{
+  //get search_term
+  search_term = document.getElementById('search_term').value;
+  
+  if(auth_token == null){
+    get_auth();
+    auth_wait();
+  }
+  
+  //fix search term
+  fixed_search = '?q=' + search_term.replace(/\s/g, '%20') + '&type=album&limit=10';
+  
+  //query spotify
+  const Http = new XMLHttpRequest();
+  const url='https://api.spotify.com/v1/search' + fixed_search;
+  
+  Http.open("GET", url);
+  
+  //set headers
+  Http.setRequestHeader("Authorization", auth_token);
+  
+  Http.send();
+  
+  Http.onreadystatechange = (e)=>{
+    if(Http.status == 200)
     {
-      //get search_term
-      var search_term = $("#search_term").val();
-  
-      if(page_script.auth_token == null){
-        page_script.get_auth();
-        page_script.auth_wait();
-      }
-  
-      //fix search term
-      var fixed_search = '?q=' + search_term.replace(/\s/g, '%20') + '&type=album&limit=' + page_script.album_limit;
-  
-      //query spotify
-      const Http = new XMLHttpRequest();
-      const url='https://api.spotify.com/v1/search' + fixed_search;
-    
-      Http.open("GET", url);
-  
-      //set headers
-      Http.setRequestHeader("Authorization", page_script.auth_token);
-  
-      Http.send();
-  
-      Http.onreadystatechange = (e)=>{
-        if(Http.status == 200)
-        {
-          build_results(Http.responseText);
-        }
-        else
-        {
-          console.log("Request error code: " + Http.status);
-        }
-      }
-    },
-
-  "build_results": function(search_results)
-    {
-      var json_results = JSON.parse(search_results);
-      if(json_results)
-      {
-        var album_results = json_results.albums.items;
-        $("#results").html("");
-        //this loop can probably be converted to jquery but im lazy
-        album_results.forEach((album_entry)=>{
-          var node = document.createElement("div");
-          node.setAttribute("onclick", "setImage(\"" + album_entry.images[0].url + "\")");
-          var album_pic = document.createElement("img")
-          album_pic.setAttribute("src", album_entry.images[album_entry.images.length - 1].url);
-          node.appendChild(album_pic);
-          var album_name = document.createTextNode(album_entry.name + ": ");
-          node.appendChild(album_name);
-          var artists = "";
-          album_entry.artists.forEach((artist)=>{
-            if(artists === ""){
-              artists = artist.name;
-            } else {
-              artists = artists + ", " + artist.name;
-            }
-          });
-          node.appendChild(document.createTextNode(artists));
-          $("#results").append($(node));
-        });
-      }
-      else
-      {
-        console.log("Error parsing json");
-      }
-    },
-
-  "setImage": function(url)
-    {
-      //get number of boundary to put it in
-      var s = document.getElementById('selection');
-      var album_idx = parseInt(s.options[s.selectedIndex].value) - 1;
-  
-      loadImage(url, (img)=>{
-        //console.log(album_idx);
-        albums[album_idx].setImage(img);
-      }, (e)=>{
-        console.log("Error when loading image: " + url);
-      });
+      build_results(Http.responseText);
     }
+    else
+    {
+      console.log("Request error code: " + Http.status);
+    }
+  }
+}
+
+function build_results(search_results)
+{
+  var json_results = JSON.parse(search_results);
+  if(json_results)
+  {
+    var album_results = json_results.albums.items;
+    document.getElementById('results').innerHTML = "";
+    album_results.forEach((album_entry)=>{
+      var node = document.createElement("div");
+      node.setAttribute("onclick", "setImage(\"" + album_entry.images[0].url + "\")");
+      var album_pic = document.createElement("img")
+      album_pic.setAttribute("src", album_entry.images[album_entry.images.length - 1].url);
+      node.appendChild(album_pic);
+      var album_name = document.createTextNode(album_entry.name + ": ");
+      node.appendChild(album_name);
+      var artists = "";
+      album_entry.artists.forEach((artist)=>{
+        if(artists === ""){
+          artists = artist.name;
+        } else {
+          artists = artists + ", " + artist.name;
+        }
+      });
+      node.appendChild(document.createTextNode(artists));
+      document.getElementById('results').appendChild(node);
+    });
+  }
+  else
+  {
+    console.log("Error parsing json");
+  }
+}
+
+function setImage(url)
+{
+  //get number of boundary to put it in
+  var s = document.getElementById('selection');
+  var album_idx = parseInt(s.options[s.selectedIndex].value) - 1;
+  
+  loadImage(url, (img)=>{
+    //console.log(album_idx);
+    albums[album_idx].setImage(img);
+  }, (e)=>{
+    console.log("Error when loading image: " + url);
+  });
 }
 
 //p5js functions
 function preload()
 {
   //Load in the clinton image
-  page_script.clinton_img = loadImage(page_script.clinton_file, function(){
+  clinton_img = loadImage(clinton_file, function(){
     console.log("Image loaded successfully.");
   }, function(event){
     console.log("Image failed to load.");
@@ -198,18 +164,17 @@ function preload()
 }
 
 function setup() {
-  var canvas = createCanvas(page_script.clinton_width * page_script.clinton_scale, 
-                            page_script.clinton_height * page_script.clinton_scale, WEBGL);
+  var canvas = createCanvas(clinton_width * clinton_scale, clinton_height * clinton_scale, WEBGL);
   canvas.parent("clinton-container");
   colorMode(HSB, 100);
-  page_script.get_auth();
+  get_auth();
   
-  page_script.album_boundaries.forEach((boundary)=>{
-    page_script.albums.push(new Album(boundary));
+  album_boundaries.forEach((boundary)=>{
+    albums.push(new Album(boundary));
   });
   
   //build select box
-  for(var i = 0; i < page_script.album_boundaries.length; i++)
+  for(var i = 0; i < album_boundaries.length; i++)
   {
     var option = document.createElement('option');
     option.innerHTML = i + 1;
@@ -221,11 +186,9 @@ function setup() {
 function draw() {
   background(color(100 * noise(frameCount / 30), 100, 100));
   translate(-width / 2, -height / 2);
-  page_script.albums.forEach((album, idx)=>{
-    album.draw(page_script.clinton_scale);
+  albums.forEach((album, idx)=>{
+    album.draw(clinton_scale);
   });
   
-  image(page_script.clinton_img, 0, 0, 
-    page_script.clinton_width * page_script.clinton_scale, 
-    page_script.clinton_height * page_script.clinton_scale.clinton_scale);
+  image(clinton_img, 0, 0, clinton_width * clinton_scale, clinton_height * clinton_scale);
 }

@@ -1,17 +1,11 @@
-$("#spotify").click(function(){
-  //unloadScript();
-  //load the spotify page
-  loadPage("demos/spotify.html");
-  //load the spotify script
-  //loadScript("demos/spotify.js");
+$(document).ready(function(){
+  $("#spotify").click(function(){
+    window.location = "spoitfy.html";
+  });
+
+  $("#geometry").click(function(){
+    //unloadScript();
+    //load the geometry page
+    //load the geometry script
+  });
 });
-
-$("#geometry").click(function(){
-  //unloadScript();
-  //load the geometry page
-  //load the geometry script
-});
-
-
-
-//YOU WERE EDITING THE SPOTIFY JAVASCRIPT TO WORK ON YOUR WEBSITE YA BUFFOON
