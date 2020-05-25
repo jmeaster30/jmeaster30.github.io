@@ -78,6 +78,7 @@ body {
   background-image: var(--body-bg-img);
   background-repeat: repeat;
   border: 4px inset var(--border-color-up);
+  padding: 1%;
   text-align: center;
   font-family: var(--body-font);
   color: green;

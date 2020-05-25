@@ -1,4 +1,7 @@
+var page_script;
+
 $(document).ready(function(){
+  unloadScript();
   loadPage("home.html"); //load the home page in to start
 
   //get css custom property
@@ -32,13 +35,15 @@ $(document).ready(function(){
   //repos
   $("#repos_btn").click(function(){
     console.log("repositories clicked");
-    loadPage("test.html");
-    loadScript("test.js");
+    unloadScript();
+    loadPage("repo_page.html");
+    loadScript("repo_page.js");
   });
 
   //demos
   $("#demos_btn").click(function(){
     console.log("demos button clicked");
+    unloadScript();
     loadPage("demo_page.html");
     loadScript("demo_page.js");
   });
@@ -69,4 +74,12 @@ let loadScript = function(local_url){
       console.log(jqxhr);
       console.log(exception);
     });
+}
+
+let unloadScript = function(){
+  page_script = null;
+  //unload p5js functions this might be a terrible idea
+  preload = null;
+  setup = null;
+  draw = null;
 }
