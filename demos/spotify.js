@@ -5,10 +5,10 @@ page_script = {
   "clinton_scale": 0.5,
   "clinton_file": "https://cdn.kapwing.com/video_image-vb_12UTqn.png",
 
-  "album_boundaries": [new Quad(new Point(236, 473), //top left
-                                new Point(615, 591), //top right
-                                new Point(133, 827), //bottom left
-                                new Point(488, 956))  //bottom right
+  "album_boundaries": [new page_script.Quad(new page_script.Point(236, 473), //top left
+                                            new page_script.Point(615, 591), //top right
+                                            new page_script.Point(133, 827), //bottom left
+                                            new page_script.Point(488, 956))  //bottom right
                       ],
 
 /*
