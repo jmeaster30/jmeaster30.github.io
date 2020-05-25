@@ -1,6 +1,6 @@
 $(document).ready(function(){
   $("#spotify").click(function(){
-    window.location = "spoitfy.html";
+    window.location = "demos/spotify.html";
   });
 
   $("#geometry").click(function(){
