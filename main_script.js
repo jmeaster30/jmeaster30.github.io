@@ -39,6 +39,8 @@ $(document).ready(function(){
   //demos
   $("#demos_btn").click(function(){
     console.log("demos button clicked");
+    loadPage("demo_page.html");
+    loadScript("demo_page.js");
   });
 
   //resume
@@ -52,16 +54,19 @@ let loadPage = function(local_url){
   var full_url = url_start + local_url;
   $.get(full_url, function(data){
     $("#window").html(data);
-  });
+  });//should do error checking stuff
 }
 
 let loadScript = function(local_url){
   var url_start = "https://jmeaster30.github.io/";
   var full_url = url_start + local_url;
-  $.getScript(full_url, function(data, textStatus, jqxhr){
-    console.log(data);
-    console.log(textStatus);
-    console.log(jqxhr.status);
-    console.log("Loaded Script");
-  });
+  $.getScript(full_url)
+    .done(function(script, textStatus){
+      console.log(textStatus);
+    })
+    .fail(function(jqxhr, settings, exception){
+      console.log("Error loading script: " + full_url);
+      console.log(jqxhr);
+      console.log(exception);
+    });
 }
