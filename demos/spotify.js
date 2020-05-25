@@ -1,20 +1,5 @@
 page_script = {} //this is so we can reference variables that are declared in the object from other variables inside the object
 page_script = {
-  "album_limit": 10,
-  "clinton_width": 1076, //main pic width in pixels
-  "clinton_height": 1356, //main pic height in pixels
-  "clinton_scale": 0.5,
-  "clinton_file": "https://cdn.kapwing.com/video_image-vb_12UTqn.png",
-
-  "album_boundaries": [page_script.Quad(page_script.Point(236, 473), //top left
-                                        page_script.Point(615, 591), //top right
-                                        page_script.Point(133, 827), //bottom left
-                                        page_script.Point(488, 956))  //bottom right
-                      ],
-
-/*
- *  DO NOT EDIT ANYTHING BELOW THIS COMMENT UNLESS YOU KNOW WHAT YOU ARE DOING
- */
 
   "Point": function(x, y)
     {
@@ -48,6 +33,19 @@ page_script = {
       }
     },
 
+  "album_limit": 10,
+  "clinton_width": 1076, //main pic width in pixels
+  "clinton_height": 1356, //main pic height in pixels
+  "clinton_scale": 0.5,
+  "clinton_file": "https://cdn.kapwing.com/video_image-vb_12UTqn.png",
+
+  "album_boundaries": [page_script.Quad(page_script.Point(236, 473), //top left
+                                        page_script.Point(615, 591), //top right
+                                        page_script.Point(133, 827), //bottom left
+                                        page_script.Point(488, 956))  //bottom right
+                      ],
+
+  //the stuff below this should not be edited
   "clinton_img": null,
   "albums": [],
 
