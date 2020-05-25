@@ -75,6 +75,7 @@ body {
 #window-body {
   width: 100%;
   height: calc(100% - var(--header-height));
+  overflow: scroll;
   background-image: var(--body-bg-img);
   background-repeat: repeat;
   border: 4px inset var(--border-color-up);
