@@ -1,4 +1,4 @@
-page_script = {}
+page_script = {} //this is so we can reference variables that are declared in the object from other variables inside the object
 page_script = {
   "album_limit": 10,
   "clinton_width": 1076, //main pic width in pixels
@@ -6,10 +6,10 @@ page_script = {
   "clinton_scale": 0.5,
   "clinton_file": "https://cdn.kapwing.com/video_image-vb_12UTqn.png",
 
-  "album_boundaries": [new page_script.Quad(new page_script.Point(236, 473), //top left
-                                            new page_script.Point(615, 591), //top right
-                                            new page_script.Point(133, 827), //bottom left
-                                            new page_script.Point(488, 956))  //bottom right
+  "album_boundaries": [page_script.Quad(page_script.Point(236, 473), //top left
+                                        page_script.Point(615, 591), //top right
+                                        page_script.Point(133, 827), //bottom left
+                                        page_script.Point(488, 956))  //bottom right
                       ],
 
 /*
@@ -18,45 +18,34 @@ page_script = {
 
   "Point": function(x, y)
     {
-      this.x = x;
-      this.y = y;
+      return {'x': x, 'y': y};
     },
   "Quad": function(top_left, top_right, bottom_left, bottom_right)
     {
-      this.top_left = top_left;
-      this.top_right = top_right;
-      this.bottom_left = bottom_left;
-      this.bottom_right = bottom_right;
+      return { 'top_left': top_left,
+               'top_right': top_right,
+               'bottom_left': bottom_left,
+               'bottom_right': bottom_right };
     },
   "Album": function(bounding_quad, image)
     {
-      this.b_quad = bounding_quad;
-      if(image){
-        this.image = image;
-      } else {
-        this.backup = createImage(2, 2);
-        this.backup.set(0, 0, color(255, 0, 0));
-        this.backup.set(0, 1, color(0, 0, 255));
-        this.backup.set(1, 1, color(255, 0, 0));
-        this.backup.set(1, 0, color(0, 0, 255));
-      }
-
-      this.setImage = function(image) {
-        this.image = image;
-      };
-      
-      this.draw = function(scale) {
-        noStroke();
-        if(this.image) {
-          texture(this.image);
-        } else {
-          texture(this.backup);
+      return {
+        'b_quad': bounding_quad,
+        'image': image,
+        'setImage': function(image) {
+          this.image = image;
+        },
+        'draw': function(scale) {
+          noStroke();
+          if(this.image) {
+            texture(this.image);
+            quad(this.b_quad.top_left.x * scale, this.b_quad.top_left.y * scale,
+                 this.b_quad.top_right.x * scale, this.b_quad.top_right.y * scale,
+                 this.b_quad.bottom_right.x * scale, this.b_quad.bottom_right.y * scale,
+                 this.b_quad.bottom_left.x * scale, this.b_quad.bottom_left.y * scale);
+          }
         }
-        quad(this.b_quad.top_left.x * scale, this.b_quad.top_left.y * scale,
-             this.b_quad.top_right.x * scale, this.b_quad.top_right.y * scale,
-             this.b_quad.bottom_right.x * scale, this.b_quad.bottom_right.y * scale,
-             this.b_quad.bottom_left.x * scale, this.b_quad.bottom_left.y * scale);
-      };
+      }
     },
 
   "clinton_img": null,
