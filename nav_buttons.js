@@ -24,7 +24,7 @@ $(document).ready(function(){
   //home
   $("#home_btn").click(function(){
     console.log("home button clicked");
-    window.location = "home.html";
+    window.location = "index.html";
   });
 
   //repos
