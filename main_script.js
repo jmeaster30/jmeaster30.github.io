@@ -58,5 +58,10 @@ let loadPage = function(local_url){
 let loadScript = function(local_url){
   var url_start = "https://jmeaster30.github.io/";
   var full_url = url_start + local_url;
-  $("#pagescr").src = full_url;
+  $.getScript(full_url, function(data, textStatus, jqxhr){
+    console.log(data);
+    console.log(textStatus);
+    console.log(jqxhr.status);
+    console.log("Loaded Script");
+  });
 }
