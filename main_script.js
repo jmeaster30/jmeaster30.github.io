@@ -57,9 +57,9 @@ $(document).ready(function(){
 let loadPage = function(local_url){ 
   var url_start = "https://jmeaster30.github.io/"; //this being hard coded gives me bad vibes but it works
   var full_url = url_start + local_url;
-  $.get(full_url, function(data){
-    $("#window").html(data);
-  });//should do error checking stuff
+  $("#window").load(full_url, function(response, status, xhr){
+    console.log(status);
+  });
 }
 
 let loadScript = function(local_url){
