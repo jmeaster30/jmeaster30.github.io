@@ -33,6 +33,7 @@ $(document).ready(function(){
   $("#repos_btn").click(function(){
     console.log("repositories clicked");
     loadPage("test.html");
+    loadScript("test.js");
   });
 
   //demos
@@ -52,4 +53,10 @@ let loadPage = function(local_url){
   $.get(full_url, function(data){
     $("#window").html(data);
   });
+}
+
+let loadScript = function(local_url){
+  var url_start = "https://jmeaster30.github.io/";
+  var full_url = url_start + local_url;
+  $("#pagescr").src = full_url;
 }
