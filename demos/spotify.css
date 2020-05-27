@@ -1,0 +1,53 @@
+:root {
+  --entry-bg-color-up: #BBB;
+  --entry-bg-color-down: #B0B0B0;
+
+  --entry-border-color-up: #DDD;
+  --entry-border-color-down: #D0D0D0;
+  
+  --entry-text-color: black;
+}
+
+#results {
+  display: block;
+  overflow: auto;
+  height: 60%;
+  min-height: 60%;
+  max-height: 60%;
+  margin: 8px;
+}
+
+.result_entry {
+  margin: 4px;
+  padding: 4px;
+  display: flex;
+  background-color: var(--entry-bg-color-up);
+  border: 4px outset var(--entry-border-color-up);
+  color: var(--entry-text-color);
+}
+
+.album_artist {
+  display: block;
+  text-align: left;
+}
+
+.album_pic {
+  display: block;
+}
+
+#search {
+  border: 4px outset var(--entry-border-color-up);
+  background-color: var(--entry-border-color-up);
+}
+
+#img-container > canvas {
+  border: 4px outset var(--entry-border-color-up);
+}
+
+#search_term {
+  border: 4px inset var(--border-color-up);
+}
+
+#selection {
+  border: 4px outset var(--border-color-up);
+}

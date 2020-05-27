@@ -1,10 +1,15 @@
-$(document).ready(function(){
-  //get css custom property
+//get css custom property
+var border_color_u;
+var border_color_d;
+var button_color_u;
+var button_color_d;
+
+$(document).ready(function(){  
   var style = getComputedStyle(document.body);
-  var border_color_u = style.getPropertyValue('--border-color-up');
-  var border_color_d = style.getPropertyValue('--border-color-down');
-  var button_color_u = style.getPropertyValue('--button-color-up');
-  var button_color_d = style.getPropertyValue('--button-color-down');
+  border_color_u = style.getPropertyValue('--border-color-up');
+  border_color_d = style.getPropertyValue('--border-color-down');
+  button_color_u = style.getPropertyValue('--button-color-up');
+  button_color_d = style.getPropertyValue('--button-color-down');
   var url_start = location.href.match(/[\s\S]*.io($|\/)/)[0];
   if(url_start[url_start.length - 1] != '/')
     url_start = url_start + '/';
