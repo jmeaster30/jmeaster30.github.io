@@ -1,0 +1,12 @@
+:root {
+  --demo-border-color: #DDD;
+  --demo-bg-color: #BBB; 
+}
+
+.col {
+  border: 4px outset var(--demo-border-color);
+  background-color: var(--demo-bg-color);
+  margin-left: 1%;
+  margin-right: 1%;
+  padding: 8px;
+}

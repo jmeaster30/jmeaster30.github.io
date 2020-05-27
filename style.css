@@ -82,7 +82,7 @@ body {
   padding: 1%;
   text-align: center;
   font-family: var(--body-font);
-  color: green;
+  color: black;
 }
 
 .my_nav_btn {
@@ -107,4 +107,24 @@ body {
   -o-user-select: none;
   user-select: none;
   cursor: default;
+}
+
+.btn-primary, .btn-primary:focus {
+  box-shadow: none;
+  border: 4px outset var(--border-color-up);
+  border-radius: 0px;
+  background-color: var(--button-color-up);
+  color: black;
+  transition: none; /* get rid of bootstrap's transition */
+}
+
+.btn-primary:hover, .btn-primary:active {
+  box-shadow: none;
+  border-color: var(--border-color-down);
+  background-color: var(--button-color-down);
+  color: white;
+}
+
+.btn-primary:active {
+  border-style: inset;
 }
