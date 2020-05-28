@@ -120,7 +120,7 @@ body {
 
 .my_nav_btn > * {
   margin-right: 2px;
-  
+  color: black;  
   /* makes things unselectable so they seem like buttons */
   -webkit-user-select: none;
   -khtml-user-select: none;
