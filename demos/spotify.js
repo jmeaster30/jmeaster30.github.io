@@ -14,43 +14,44 @@ $(document).ready(function(){
 //number of results spotify gives back
 let num_results = 15;
 
-let num_of_images = 2;
-
+let pics = [
 //clinton picture variables
-let clinton_width = 1076; //main pic width in pixels
-let clinton_height = 1356; //main pic height in pixels
-let clinton_scale = 0.5;
-let clinton_file = "https://cdn.kapwing.com/video_image-vb_12UTqn.png";
-
-let clinton_boundaries = {"hands": new Quad(new Point(236, 473), //top left
-                                          new Point(615, 591), //top right
-                                          new Point(133, 827), //bottom left
-                                          new Point(488, 956)),  //bottom right
-                        "wall": new Quad(new Point(852, 623),
-                                         new Point(1131, 701),
-                                         new Point(776, 931),
-                                         new Point(1025, 1040)),
-                        "floor left": new Quad(new Point(265, 1129),
-                                               new Point(621, 1212),
-                                               new Point(45, 1354),
-                                               new Point(471, 1460)),
-                        "floor right": new Quad(new Point(629, 1138),
-                                                new Point(1024, 1128),
-                                                new Point(642, 1378),
-                                                new Point(1138, 1359))
-                        };
-
+{
+  "width": 1076, //main pic width in pixels
+  "height": 1356, //main pic height in pixels
+  "scale": 0.5,
+  "file": "../imgs/spotify/clinton.png",
+  "boundaries": {"hands": new Quad(new Point(236, 473), //top left
+                                   new Point(615, 591), //top right
+                                   new Point(133, 827), //bottom left
+                                   new Point(488, 956)),  //bottom right
+                  "wall": new Quad(new Point(852, 623),
+                                   new Point(1131, 701),
+                                   new Point(776, 931),
+                                   new Point(1025, 1040)),
+                  "floor left": new Quad(new Point(265, 1129),
+                                         new Point(621, 1212),
+                                         new Point(45, 1354),
+                                         new Point(471, 1460)),
+                  "floor right": new Quad(new Point(629, 1138),
+                                          new Point(1024, 1128),
+                                          new Point(642, 1378),
+                                          new Point(1138, 1359))
+                }
+},
 //obama picture variables
-let obama_width = 1440;
-let obama_height = 1738;
-let obama_scale = 0.4;
-let obama_file = "https://i.ibb.co/72FLkB7/obama.png";
-
-let obama_boundaries = {"obama": new Quad(new Point(249, 1038),
-                                          new Point(1031, 1007),
-                                          new Point(277, 1760),
-                                          new Point(1079, 1737))};
-
+{
+  "width": 1440,
+  "height": 1738,
+  "scale": 0.4,
+  "file": "../imgs/spotify/obama.png",
+  "boundaries": {"obama": new Quad(new Point(249, 1038),
+                                   new Point(1031, 1007),
+                                   new Point(277, 1760),
+                                   new Point(1079, 1737))
+                }
+}
+];  //end of pictures array
 
 
 /*
@@ -229,35 +230,20 @@ function setImage(url)
 function preload()
 {
   //pick random number
-  var r = floor(random(num_of_images));
+  var r = floor(random(pics.length));
 
-  if(r == 0)
-  {
-    //Load in the clinton image
-    the_img = loadImage(clinton_file, function(){
-      console.log("Image loaded successfully.");
-    }, function(event){
-      console.log("Image failed to load.");
-      console.log(event);
-    });
-    img_width = clinton_width;
-    img_height = clinton_height;
-    img_scale = clinton_scale;
-    img_boundaries = clinton_boundaries;
-  }
-  else if(r == 1)
-  {
-    the_img = loadImage(obama_file, function(){
-      console.log("Obama loaded successfully.");
-    }, function(event){
-      console.log("obama failed to load.");
-      console.log(event);
-    });
-    img_width = obama_width;
-    img_height = obama_height;
-    img_scale = obama_scale;
-    img_boundaries = obama_boundaries;
-  }
+  //Load in the clinton image
+  the_img = loadImage(pics[r].file, function(){
+    console.log("Image loaded successfully.");
+  }, function(event){
+    console.log("Image failed to load.");
+    console.log(event);
+  });
+  
+  img_width = pics[r].width;
+  img_height = pics[r].height;
+  img_scale = pics[r].scale;
+  img_boundaries = pics[r].boundaries;
 }
 
 function setup() {

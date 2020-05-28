@@ -94,6 +94,28 @@ body {
   margin-right: 5px;
   background-color: var(--button-color-up);
   vertical-align: middle;
+  color: black;
+}
+
+.my_nav_btn:focus {
+  outline: 2px dashed var(--border-color-down);
+  box-shadow: none;
+  border: 4px outset var(--border-color-up);
+  border-radius: 0px;
+  background-color: var(--button-color-up);
+  color: black;
+}
+
+.my_nav_btn:hover {
+  border-color: var(--border-color-down);
+  background-color: var(--button-color-down);
+  color: white;
+}
+
+.my_nav_btn:active {
+  border: 4px inset var(--border-color-down);
+  background-color: var(--button-color-down);
+  color: white;
 }
 
 .my_nav_btn > * {
@@ -109,7 +131,8 @@ body {
   cursor: default;
 }
 
-.btn-primary, .btn-primary:focus {
+.btn-primary {
+  outline: none;
   box-shadow: none;
   border: 4px outset var(--border-color-up);
   border-radius: 0px;
@@ -118,13 +141,28 @@ body {
   transition: none; /* get rid of bootstrap's transition */
 }
 
-.btn-primary:hover, .btn-primary:active {
+.btn-primary:focus {
+  outline: 2px dashed var(--border-color-down);
+  box-shadow: none;
+  border: 4px outset var(--border-color-up);
+  border-radius: 0px;
+  background-color: var(--button-color-up);
+  color: black;
+}
+
+.btn-primary:hover {
   box-shadow: none;
   border-color: var(--border-color-down);
   background-color: var(--button-color-down);
   color: white;
 }
 
-.btn-primary:active {
-  border-style: inset;
+.btn-primary:not(:disabled):not(.disabled):active {
+  border: 4px inset var(--border-color-down);
+  background-color: var(--button-color-down);
+  color: white;
+}
+
+.btn-primary:not(:disabled):not(.disabled):active:focus {
+  box-shadow: none;
 }
