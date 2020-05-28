@@ -1,8 +1,13 @@
-p {
-  color: white;
-  text-align: left;
+.wrapped {
+  border: 4px outset var(--border-color-up);
+  background-color: var(--button-color-up);
+  color: black; 
 }
 
-h2 {
-  color: white;
+.wrapped > h2 {
+  text-align: center;
+}
+
+.wrapped > p {
+  text-align: left;
 }
