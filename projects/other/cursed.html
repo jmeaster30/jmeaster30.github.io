@@ -45,7 +45,7 @@
         <div class="col m-3">
           <div class="row">
             <div class="col">
-              <h3><a href="https://github.com/jmeaster30/c-minus-compiler" target="_blank">C- (C Minus) Compiler</a></h3>
+              <h3><a href="https://github.com/jmeaster30/curs3D" target="_blank">curs3D Rendering Engine</a></h3>
             </div>
           </div>
           <div class="row">
@@ -53,16 +53,24 @@
               <ul>
                 <li>
                   <h4><u>Description</u></h4>
-                  <p>I made this compiler for my Compiler Design class in Spring 2019. We were told we could use any language we wanted for this project and we could even use Flex and Bison to generate the lexer and parser.
-                     To challenge myself, I chose to use C and to implement the lexer and parser by hand. One of the problems came from when I was turning the grammar we got for the language into an LL(1) grammar. I didn't read the grammar close enough and
-                      missed something so I had to kind of force in one rule. However, my bad fix seems to work so I might not go in and redo the grammar. The other problem is with code generation. I messed up keeping track of the variable offsets when generating the assembly code.
-                      This causes local variables to not work at all; so, this is a crucial fix I need to make. <del>Once this last problem is fixed the code for the compiler will be uploaded to github and this page will be updated.</del> 
-                      The code is currently on Github but I did not fix it and it is still broken up into folders for each of the stages of the project. There is also a lot of the extra testing files that should be deleted.
-                     </p>
+                  <p>I made this cause I thought it would be funny to have an application that runs solely in a terminal that renders 3d graphics. 
+                      Currently it only renders 2d shapes but it still runs surprisingly fast.</p>
+                </li>
+                <li>
+                  <h4><u>Usage:</u></h4>
+                  <p>The "main.cpp", "engine.h", and "engine.cpp" are not necessary for the rendering engine to work.
+                     They simply provide the timing for the rendering loop and some basic wrapping functions I was using for testing. 
+                    If you want to use this renderer you just need to include "renderer.h" into your project file and you will be able to use the full functionality of the curs3D rendering engine.</p>
                 </li>
                 <li>
                   <h4><u>Improvements</u></h4>
-                  <p>See Above.</p>
+                  <p>
+                      One main improvement, that is more logistical, would be renaming some of the files so it feels better to code with. 
+                      However, I don't feel like fixing this right away cause this rendering engine is not in a state where I feel like it should be used.
+                      Currently, this is engine can only draw 2d triangles and rectangles so an obvious improvement would be to add in 3d shapes.
+                       One issue right now is with the colors on the filled in 2d shapes because I implemented the color blending algorithm incorrectly.
+                      I really want to add support for shaders and off load some of the rendering work to the graphics card but I am still learning OpenCL so this probably won't happen anytime soon.
+                  </p>
                 </li>
               </ul>
             </div>
