@@ -10,7 +10,7 @@ var particle_radius = 10; //the radius of the particle
 var friction = 0.95; //the world friction
 
 var max_force = 1; //the maximum amount of force between two particles
-var repel_force = 4; //the amount of repeling force
+var repel_force = 3; //the amount of repeling force
 
 var min_type = 3; //the minimum number of types
 var max_type = 15; //the maximum number of types
