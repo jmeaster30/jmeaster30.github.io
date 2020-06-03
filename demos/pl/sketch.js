@@ -4,7 +4,7 @@ var half_width = cvs_width / 2;
 var half_height = cvs_height / 2;
 
 var particles = [];
-var particle_num = 120; //the number of particles to add to the simulation
+var particle_num = 75; //the number of particles to add to the simulation
 
 var particle_radius = 10; //the radius of the particle
 var friction = 0.95; //the world friction
@@ -42,8 +42,8 @@ class Rule {
 class Particle {
   constructor(type){
     this.type = type;
-    this.x = random(0, cvs_width);
-    this.y = random(0, cvs_height);
+    this.x = random(-half_width, half_width);
+    this.y = random(-half_width, half_width);
     this.fx = 0; //x-component of force (Note: force is equal to acceleration if mass is 1kg)
     this.fy = 0; //y-component of force
     this.vx = random(-2, 2); //x-component of velocity
@@ -111,6 +111,8 @@ function setup() {
   canvas.parent("cvs-container");
   colorMode(HSB, 100);
 
+  //frameRate(framerate);
+  
   generate();
 }
 
@@ -124,7 +126,7 @@ function keyReleased()
 function draw() {
   background(22);
   translate(-width / 2, -height / 2); //webgl makes the origin the center of the screen but we want it at the top left corner
-  
+
   particles.forEach((p, idx)=>{
     for(var i = 0; i < particles.length; i++)
     {
