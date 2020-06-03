@@ -1,12 +1,4 @@
-:root {
-  --entry-bg-color-up: #BBB;
-  --entry-bg-color-down: #B0B0B0;
-
-  --entry-border-color-up: #DDD;
-  --entry-border-color-down: #D0D0D0;
-  
-  --entry-text-color: black;
-}
+/*
 
 #results {
   display: block;
@@ -50,4 +42,4 @@
 
 #selection {
   border: 4px outset var(--border-color-up);
-}
+}*/

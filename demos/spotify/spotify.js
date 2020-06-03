@@ -155,7 +155,7 @@ function build_results(search_results)
 
       var album_pic = $("<img>")
                          .attr("src", album_entry.images[album_entry.images.length - 1].url);
-      node.append($("<div></div>").addClass("col").append(album_pic));
+      node.append($("<div></div>").addClass("col-2").append(album_pic));
 
       var sub_div = $("<div></div>").addClass("col");
       
