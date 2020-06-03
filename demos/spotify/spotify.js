@@ -4,6 +4,7 @@ let num_results = 15;
 let pics = [
 //clinton picture variables
 {
+  "name": "clinton",
   "width": 1076, //main pic width in pixels
   "height": 1356, //main pic height in pixels
   "scale": 0.5,
@@ -28,6 +29,7 @@ let pics = [
 },
 //obama picture variables
 {
+  "name": "obama",
   "width": 1440,
   "height": 1738,
   "scale": 0.4,
@@ -46,6 +48,7 @@ let pics = [
  */
 
 var the_img;
+var img_name;
 var img_width;
 var img_height;
 var img_scale;
@@ -58,6 +61,8 @@ var auth_status = "";
 function get_auth()
 {  
   console.log("Sending Spotify Auth Request.");
+
+  //auth credential for the spotify api
   var client_auth_cred = "ZjAxYjlmMTJiMDk2NGYzYmJiY2E3YzE3YzQxN2RlYjE6NTU0MjEzNTlkYzRkNGM2NWFlMmFjMTJmNzlmMzA1MjQ=";
   
   const Http = new XMLHttpRequest();
@@ -126,8 +131,10 @@ function search()
   //set headers
   Http.setRequestHeader("Authorization", auth_token);
   
+  //send request
   Http.send();
   
+  //set event listener for the returned data
   Http.onreadystatechange = (e)=>{
     if(Http.status == 200)
     {
@@ -149,21 +156,27 @@ function build_results(search_results)
     $("#results").empty();
     
     album_results.forEach((album_entry)=>{
+      //create result entry row
       var node = $("<div></div>")
                     .addClass("row")
                     .attr("onclick", "setImage(\"" + album_entry.images[0].url + "\")");
 
+      //create div for the picture and add it to the result entry
       var album_pic = $("<img>")
                          .attr("src", album_entry.images[album_entry.images.length - 1].url);
-      node.append($("<div></div>").addClass("col-2").append(album_pic));
+      
 
+      //create the div for the album name and album artist
       var sub_div = $("<div></div>").addClass("col");
       
+      //create album name node and add it to the column
       var album_name = $("<h4></h4>")
                           .addClass("album_name")
                           .text(album_entry.name);
       sub_div.append(album_name);
       
+      //loop through the array of artists and build the artists string
+      // NOTE: I couldn't use .join() here cause the artists array contains spotify artist info other than the string of the name
       var artists = "";
       album_entry.artists.forEach((artist)=>{
         if(artists === ""){
@@ -176,6 +189,8 @@ function build_results(search_results)
                         .addClass("artist_name")
                         .text(artists));
 
+      // put everything together
+      node.append($("<div></div>").addClass("col-2").append(album_pic));
       node.append(sub_div);
 
       $("#results").append(node);
@@ -183,7 +198,7 @@ function build_results(search_results)
   }
   else
   {
-    console.log("Error parsing json");
+    console.log("Fatal error parsing json");
   }
 }
 
@@ -201,6 +216,14 @@ function setImage(url)
   });
 }
 
+//save the image using the filetype ext and with the filename img_name
+function saveImg(ext)
+{
+  var f = img_name + "." + ext;
+  console.log(f);
+  saveCanvas(f);
+}
+
 //p5js functions
 function preload()
 {
@@ -210,15 +233,17 @@ function preload()
   //Load in the clinton image
   the_img = loadImage(pics[r].file, function(){
     console.log("Image loaded successfully.");
+
+    img_name = pics[r].name;
+    img_width = pics[r].width;
+    img_height = pics[r].height;
+    img_scale = pics[r].scale;
+    img_boundaries = pics[r].boundaries;
+
   }, function(event){
     console.log("Image failed to load.");
     console.log(event);
   });
-  
-  img_width = pics[r].width;
-  img_height = pics[r].height;
-  img_scale = pics[r].scale;
-  img_boundaries = pics[r].boundaries;
 }
 
 function setup() {

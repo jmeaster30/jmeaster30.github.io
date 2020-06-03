@@ -169,3 +169,30 @@ pre code {
   border: 1px solid var(--my-border-color);
   background-color: var(--my-bg-color);
 }
+
+/*********************************/
+/* Button Primary */
+
+.btn-primary {
+  border: 1px solid var(--my-border-color);
+  color: var(--my-text-color);
+  background-color: var(--my-bg-color);
+}
+
+.btn-primary:focus {
+  border: 1px solid var(--my-border-color);
+  background-color: var(--my-bg-color);
+  color: var(--my-link-color);
+}
+
+.btn-primary:hover {
+  border-color: var(--my-hover-color);
+  background-color: var(--my-bg-color);
+  color: var(--my-link-color);
+}
+
+.btn-primary:active {
+  border: 1px solid var(--my-hover-color);
+}
+
+
