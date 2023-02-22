@@ -1,0 +1,114 @@
+$spaceBackground: url("../../../assets/space.gif"); 
+
+.projectEntryFilter
+{
+  background-image: $spaceBackground;
+  border-radius: 16px;
+
+  .searchWrapper {
+    border: none;
+    border-radius: 16px;
+    color: white !important;
+
+    .chip {
+      background: transparent !important;
+      font-size: inherit;
+
+      margin: 0px;
+      padding: 4px 6px;
+
+      .customCloseIcon {
+        cursor: pointer;
+        width: 16px;
+        height: 16px;
+        margin-left: -8px;
+        z-index: 100;
+        background: white;
+        border-radius: 16px;
+        border: 2px solid black;
+        box-shadow: 6px black;
+        color: red !important;
+      }
+    }
+  }
+
+  ::placeholder{
+    color: white;
+    opacity: 1;
+    font-weight: bold;
+  }
+
+  .optionListContainer {
+    width: 25% !important;
+
+    .optionContainer {
+      border: none;
+      border-radius: 16px;
+    }
+
+    .option:hover {
+      background-image: none;
+      background: purple;
+    }
+
+    .option {
+      background-image: $spaceBackground;
+      color: white;
+      margin: 4px;
+    }
+
+    .highlight {
+      background-image: none;
+      background: purple;
+    }
+  }
+}
+
+.projectEntryCard
+{
+  border-radius: 16px;
+  margin: 8px;
+  padding: 16px;
+  height: 100%;
+  color: white;
+  background-image: $spaceBackground
+}
+
+.projectEntryImage
+{
+  width: 100%; 
+  max-width: 300px; 
+  height: auto;
+  margin-top: '32px';
+}
+
+.projectEntryTitle
+{
+  font-weight: bold;
+  font-size: 24px;
+
+  &:hover {
+    font-weight: bolder;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+  .noLink {
+    cursor: not-allowed !important;
+  }
+}
+
+.projectEntryLink
+{
+  float: right;
+  * {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.projectEntryBody
+{
+  display: block;
+  margin: '32px';
+}
