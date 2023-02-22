@@ -14,6 +14,7 @@ const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin'
 
 module.exports = {
   context: sourcePath,
+  mode: isProduction ? 'production' : 'development',
   entry: {
     app: './main.tsx',
   },
