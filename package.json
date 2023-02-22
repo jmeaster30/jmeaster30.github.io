@@ -9,7 +9,7 @@
     "predeploy": "npm run build:prod && cp CNAME build/CNAME",
     "deploy": "gh-pages -d build",
     "build:dev": "webpack --progress --mode development",
-    "build:prod": "webpack --progress --mode production",
+    "build:prod": "cross-env NODE_ENV=production webpack --progress --mode production",
     "prettier": "prettier --write \"src/**/*.{ts,tsx,css}\"",
     "start": "webpack-dev-server --mode development --hot --progress --port 3000 --open",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -28,6 +28,7 @@
     "@types/webpack": "^4.41.32",
     "babel-loader": "^8.2.4",
     "clean-webpack-plugin": "^4.0.0",
+    "cross-env": "^7.0.3",
     "css-loader": "^3.6.0",
     "css-modules-typescript-loader": "^4.0.1",
     "file-loader": "^6.2.0",
