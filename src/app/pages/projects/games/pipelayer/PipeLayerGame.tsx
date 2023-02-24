@@ -55,6 +55,10 @@ const PipeLayerGame = ({}) => {
   const [gameState, setGameState] = React.useState<GameState>({flows: [], anchorPoints: [], minMoves: 0, currentMoves: 0});
   let randomState = new Random(seed);
 
+  React.useEffect(() => {
+    genGameState(boardSize);
+  }, []);
+
   const drawBoard = React.useCallback(() => {
     const canvas = canvasRef.current;
     const context = canvas?.getContext('2d');
@@ -108,7 +112,6 @@ const PipeLayerGame = ({}) => {
     }
 
     setGameState(gs);
-    
   }, [gameState, seed, boardSize]);
 
   React.useEffect(() => {
@@ -117,21 +120,21 @@ const PipeLayerGame = ({}) => {
 
   const updateBoardSize = React.useCallback((event: any) => {
     setBoardSize(event.target.value);
-    genGameState(event.target.value);
     randomState = new Random(seed);
+    genGameState(event.target.value);
   }, [randomState, seed, boardSize]);
 
   const updateSeed = React.useCallback((event: any) => {
     setSeed(event.target.value);
-    genGameState(boardSize);
     randomState = new Random(event.target.value);
+    genGameState(boardSize);
   }, [randomState, seed, boardSize]);
 
   const generateSeed = React.useCallback((_: any) => {
     let v = randomSeed(10);
     setSeed(v);
-    genGameState(boardSize);
     randomState = new Random(v);
+    genGameState(boardSize);
   }, [randomState, seed, boardSize]);
 
   return (<Row className={styles.pipeLayerBody}>
