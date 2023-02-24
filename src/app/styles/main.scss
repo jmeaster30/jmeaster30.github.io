@@ -65,12 +65,30 @@ $underConstructionBackground: url("../../assets/leafy.png");
   font-size: 20px;
   background-color: #093232;
   text-shadow: 2px 2px 2px black;
+  color: rgb(255, 255, 255);
   p {
     padding: 4px;
     padding-left: 16px;
     font-weight: bold;
     color: rgb(255, 255, 255);
   }
+}
+
+.pipeLayerBody {
+  padding: 4px;
+  font-size: 20px;
+  background-color: #093232;
+  text-shadow: 2px 2px 2px black;
+  color: rgb(255, 255, 255);
+}
+
+.pipeLayerCanvasContainer {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.pipeLayerCanvas {
+  object-fit: scale-down;
 }
 
 .gallery {

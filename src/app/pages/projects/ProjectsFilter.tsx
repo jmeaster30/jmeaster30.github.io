@@ -8,6 +8,7 @@ import { faCircleXmark } from '@fortawesome/free-solid-svg-icons';
 
 interface ProjectsFilterProps {
   options: string[],
+  defaultOptions: string[],
   onFilterUpdate?: (selectedTags: string[]) => void,
 }
 
@@ -16,7 +17,7 @@ interface ProjectsFilterOptions {
   id: number,
 }
 
-const ProjectsFilter = observer(({ options, onFilterUpdate }: ProjectsFilterProps) => {
+const ProjectsFilter = observer(({ options, defaultOptions, onFilterUpdate }: ProjectsFilterProps) => {
   const [internalOptions, setInternalOptions] = React.useState<ProjectsFilterOptions[]>([]);
   const [selected, setSelected] = React.useState<ProjectsFilterOptions[]>([]);
 
@@ -24,7 +25,13 @@ const ProjectsFilter = observer(({ options, onFilterUpdate }: ProjectsFilterProp
     setInternalOptions(options
       .filter((value, index, self) => self.indexOf(value) === index)
       .map((value, index) => ({name: value, id: index})));
-  }, [options]);
+
+    if (defaultOptions) {
+      setSelected(defaultOptions
+        .filter((value, index, self) => self.indexOf(value) === index)
+        .map((value, index) => ({name: value, id: index})));
+    }
+  }, [options, defaultOptions]);
 
   React.useEffect(() => {
     if (onFilterUpdate) {

@@ -13,11 +13,16 @@ const projects_list = [
   {title: 'simpledns', description: 'A really basic DNS server', gitLink: 'https://github.com/jmeaster30/simpledns', tags: ['Rust', 'Networking']},
   {title: 'vore', description: 'A regex engine with english-like syntax', gitLink: 'https://github.com/jmeaster30/vore', link: '/projects/vore', tags: ['Go', 'Regex Engine']},
   {title: 'Particle Life', description: 'A simulation of basic rules on a set of particles', link: '/projects/particlelife', tags: ['TypeScript', 'ThreeJS']},
+  {title: 'Pipe Layer', description: 'An HTML5 game based on the mobile game Flow', link: '/games/pipelayer', tags: ['Game', 'TypeScript', 'HTML5']}
 ]
 
 interface ProjectsGridProperties {
   chunkSize: number;
   list: ProjectEntryProperties[];
+}
+
+interface ProjectPageProperties {
+  defaultTags?: string[];
 }
 
 const ProjectsGrid = observer(({ chunkSize, list } : ProjectsGridProperties) => {
@@ -47,7 +52,7 @@ const ProjectsGrid = observer(({ chunkSize, list } : ProjectsGridProperties) => 
   </div>;
 })
 
-const ProjectsPage = observer(() => {
+const ProjectsPage = observer(({defaultTags}: ProjectPageProperties) => {
   const [filteredList, setFilteredList] = React.useState<ProjectEntryProperties[]>([]);
   
   const tags_list = React.useMemo(() => {
@@ -75,12 +80,16 @@ const ProjectsPage = observer(() => {
   }, [filteredList, setFilteredList]);
   
   React.useEffect(() => {
+    handleFilterUpdate
+  }, [defaultTags]);
+
+  React.useEffect(() => {
     handleFilterUpdate(tags_list);
   }, [tags_list]);
 
   return <div>
     <Row>
-      <ProjectsFilter options={tags_list} onFilterUpdate={handleFilterUpdate}/>
+      <ProjectsFilter options={tags_list} defaultOptions={defaultTags || []} onFilterUpdate={handleFilterUpdate}/>
     </Row>
     <Row>
       <ProjectsGrid chunkSize={4} list={filteredList}/>
