@@ -13,7 +13,7 @@ const projects_list = [
   {title: 'simpledns', description: 'A really basic DNS server', gitLink: 'https://github.com/jmeaster30/simpledns', tags: ['Rust', 'Networking']},
   {title: 'vore', description: 'A regex engine with english-like syntax', gitLink: 'https://github.com/jmeaster30/vore', link: '/projects/vore', tags: ['Go', 'Regex Engine']},
   {title: 'Particle Life', description: 'A simulation of basic rules on a set of particles', link: '/projects/particlelife', tags: ['TypeScript', 'ThreeJS']},
-  {title: 'Pipe Layer', description: 'An HTML5 game based on the mobile game Flow', link: '/games/pipelayer', tags: ['Game', 'TypeScript', 'HTML5']}
+  //{title: 'Pipe Layer', description: 'An HTML5 game based on the mobile game Flow', link: '/games/pipelayer', tags: ['Game', 'TypeScript', 'HTML5']}
 ]
 
 interface ProjectsGridProperties {

@@ -1,29 +1,10 @@
-.albumSearchResult {
-  background: white;
-  margin: 8px;
-  padding: 8px;
-  border-radius: 4px;
-}
-
-.resultsView {
-  width: 60%;
-  max-height: 75%;
-  overflow: auto;
-}
-
-.spotifyBody {
-  display: flex;
-  overflow: hidden;
+.spotifyContainer {
   min-height: 100%;
-
-  .spotifyCanvasContainer {
-    display: block;
-    min-height: 100%;
+  height: 90vh;
+  overflow: hidden;
+  * {
+    min-width: 100%;
     height: 100%;
-
-    .react-p5 {
-      display: block;
-      min-height: 100%;
-    }
+    width: 100%;
   }
 }

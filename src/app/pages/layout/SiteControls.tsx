@@ -3,7 +3,7 @@ import * as React from 'react';
 import { useHistory } from 'react-router';
 import HomeIcon from 'assets/home9.gif';
 import ProjectsIcon from 'assets/Projects.gif';
-import GamesIcon from 'assets/videogames.gif';
+//import GamesIcon from 'assets/videogames.gif';
 import styles from '../../styles/main.scss';
 
 interface SiteButtonProps {
@@ -25,7 +25,7 @@ const SiteControls = observer(() => (
   <div>
     <SiteButton url="/" image={HomeIcon}/>
     <SiteButton url="/projects" image={ProjectsIcon}/>
-    <SiteButton url="/games" image={GamesIcon}/>
+    {/*<SiteButton url="/games" image={GamesIcon}/>*/}
   </div>
 ));
 
