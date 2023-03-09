@@ -13,7 +13,7 @@ body {
   background-image: var(--space-bg);
   margin: 0px;
   font-family: 'Courier New', Courier, monospace;
-  overflow: hidden;
+  overflow: clip;
 }
 
 .site-title {

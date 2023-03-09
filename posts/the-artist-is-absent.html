@@ -1,0 +1,162 @@
+<div class="post-title">The Artist is Absent</div>
+<div class="post-author">John Easterday</div>
+<div class="post-date">3/9/2023</div>
+<div class="post-section-title">Sometimes I think about bugs</div>
+<p>
+  <i>8:00am</i> Normal day not a clear sky out but only a couple clouds. Shower, get dressed, do my morning scroll of
+  Reddit.
+</p>
+<p>
+  <i>8:55am</i> I work from home mostly so my commute is a 30 second walk to my home office. Turn my work laptop on and
+  wait
+  for my startup jobs to open everything I need for the day. Scroll more on Reddit.
+</p>
+<p>
+  <i>9:00am</i> Join the standup meeting. While people are listing off what they completed yesterday and what their
+  plans for
+  today are, I hear my email ding and open my inbox.
+<blockquote>
+  We can't perform this key part of our business and we are totally hosed the whole day because of it. I can't believe
+  you people have jobs since this program is so broken. You need to fix this NOW.
+  -one of your kind and understanding clients
+</blockquote>
+We only hear from this customer every 6 months. I guess the broken software is tolerable for the other 182 days.
+The fact remains we have a bug and it needs to be fixed.
+</p>
+<p>
+  <i>9:30am</i> Did some preliminary poking around on standup and can see that yes it is a bug with our code. Create a
+  work item for the bug and start looking into the issue.
+  It takes me almost no time to reproduce the issue. It's a bad bug. Reporting completely incorrect numbers resulting in
+  bad data being reported to our client's customers.
+  I figure out easily what data is correct, suggest a work around to the client so they can continue their business and
+  promise to get the bug fix out by the end of the day.
+</p>
+<p>
+  <i>9:35am</i> Find the releveant code path and start tracing the code that could produce such a heinous result.
+</p>
+<p>
+  <i>10:47am</i> I found it. Subtle but was a glaring problem. A line of code with an edge case that would rarely get
+  hit and
+  a
+  bunch of terrible code around that line, taking the edge case from just that to a guarantee.
+  I run through countless questions in my mind with increasing perturbation and confusion:
+</p>
+<ol>
+  <li>How do I fix this?</li>
+  <li>How long is this going to take?</li>
+  <li>How did this get past peer review?</li>
+  <li>How did this get past QA?</li>
+  <li>How code such bad code get all the way to production?</li>
+  <li>Who would write this code?</li>
+  <li>What the hell were they thinking?</li>
+</ol>
+<div class="post-section-title">Sometimes I think about communication</div>
+<p>
+  As humans, we communicate all the time. The most obvious form of communication is verbal communication. Most people
+  talk with others every single day, where it be with your boss, with your spouse, with your cats.
+</p>
+<img src="https://www.communicationtheory.org/wp-content/uploads/2011/06/shannon_weaver_model.jpg"
+  alt="https://www.communicationtheory.org/wp-content/uploads/2011/06/shannon_weaver_model.jpg">
+<p>
+  These forms of communication fit the Shannon Weaver model of communication pretty well.
+  In the Shannon Weaver model, there is an information source (Alice's brain)
+  that encodes (turns thoughts into language) some message (what Alice wants to say) and transmits (speaks) that
+  message through a channel (the air).
+  Then that message gets decoded (Bob's ears turn sounds into thoughts) and then the destination (Bob's brain) receives
+  the final message. When Bob responds to what Alice said, that is the feedback and now you have communication.
+  Something else that is in this diagram is noise. This noise is depicted as only happening in the channel but it can
+  happen in the encoder, channel, or the decoder steps as well (probably can happen in the sender and receiver steps too
+  adding that idea into my thoughts doesn't change what I am about to say).
+  This noise can come as a horn blaring from a car that is driving by or the letter you wrote got rained on and some of
+  the ink smudged or interferrance in radio waves. Noise can also come from errors in the encoding and decoding process.
+  If we think of compression algorithms as a communication channel (they have encoders and decoders and the result is
+  only meaningful to a human before the encoding and after the decoding),
+  if the encoder is written perfectly and the decoder clears the code table one iteration early, the receiver can't
+  fully understand the result and the noise of this off-by-one error has completely disrupted the message.
+  A similar issue can arise if Alice and Bob are having a riveting discussion about trees. Alice has only ever lived in
+  Wisconsin around pine trees and oak tree (and she doesn't know much about any other trees).
+  When Bob begins to describe a tree as a long single trunk that droops with long large branches that only come out of
+  the very top of the tree and on those branches are a bunch of really long thin leaves, Alice will be pretty confused.
+  She has never seen a tree like that, so the image of a palm tree can't form completely.
+</p>
+<div class="post-section-title">Sometimes I think about stories</div>
+<p>
+  In highschool, my least favorite subject was English class. I never understood why it was necessary to nitpick every
+  detail of a book to pull understanding out of it.
+  Why do we need to know exactly what the author is trying to say with this story? Was the pond in The Catcher in the
+  Rye really a symbol of Holden's reluctance to transition from childhood to adulthood?
+  Or was it just that ponds and parks are calm places that people use to clear their mind and exist in nature? Do any of
+  these books really have any meaning?
+</p>
+<p>
+  Of course these books have meaning. They have to. Their existance requires meaning. If you had nothing to say then why
+  would you try to communicate it through a story?
+  Authors attempt to communicate some message or messages by writing these stories onto paper such that someone or even
+  themselves, can come back at a later time and experience the story and gain some message.
+  The art of story-telling is interesting because you are using a variety of languages (written in books, visual in
+  paintings, aural in music, combinations of several in movies and video games) to build up this message in another
+  person's mind but the person isn't there with the artist as the artist is making it.
+  This creates a broken model of communication where there isn't any feedback. It is all interpretation by the receiver.
+  When people are consuming the art, the artist is absent.
+</p>
+<div class="post-section-title">Sometimes I think about artists</div>
+<p>
+  <i>10:47am</i> I realize these questions are ultimately unimportant. I could use git blame to see who did it but the
+  only
+  thing that matters right now is that I fix this bug so we can get a patch released.
+  The fix was simple so I decided to spend a little bit of time and make the surrounding code better.
+</p>
+<p>
+  <i>11:05am</i> The pull request is up, it gets approvals, QA verifies the fix, and we deploy that night to production.
+</p>
+<p>
+  The rest of the day I think about The Catcher in the Rye. The artist took their interpretation of the requirements and
+  encoded those thoughts into logic and then into a programming language.
+  The compiler takes that code and encodes it into machine code for the computer to decode and do the work it needs to.
+  Then when I received that bug to work on,
+  I decoded the programming language into my own understanding of the current logic and compared that logic with the
+  logic I encoded from the requirements.
+  This is a massive communcation network with possibilities for noise to warp the overall message. Some areas we
+  sacrifice that control for the purpose of time and productivity.
+  Other areas we have a lot of control over. If the developer who created the code is no longer available because they
+  got hit by a bus or won a million dollars, the artist is absent.
+  If the developer who created the code is still available, you can communicate with them directly! Or can you? Software
+  projects are constantly changing and as we develop these projects our experience has changed.
+  There were some of those times where I couldn't hold back and I found I was the one who created the horrible code that
+  caused loads of problems and headaches. Even if the same human is around, those artists too are absent.
+</p>
+<p>
+  If the artist is absent, the only meaning that really matters is the meaning the artists that are not make. You can
+  analyze the systemic issues that could possibly make someone make those decisions but any
+  analysis on the past is warped by our new knowledge we've gained in the mean time.
+</p>
+<div class="post-section-title">Sometimes I think about mistakes and getting better</div>
+<p>
+  It is impossible to reflect on the past without it becoming warped with your new knowledge. I watched a conference
+  talk about Three-Mile Island and how many times the engineers on call screwed up massively and how obvious these
+  mistakes were.
+  Then, after the presenter went through everything the engineers did wrong, they talked about how the report on the
+  incident didn't take an approach of blaming and took an approach of understanding.
+  The investigators put themselves in the shoes of the engineers. Instead of asking "What the hell were these folks
+  thinking?", they asked "What lead them to believe they were doing the right thing?".
+  This reframing of the question lead to loads of improvements to other nuclear reactors. They took something bad and
+  worked on improving.
+</p>
+<p>
+  When I find issues in code at work or code in my personal projects, I find I am constantly in this state where I can't
+  talk to the person who wrote the code in the first place.
+  Even comments in the code are affected by this noise and get stale. All I have is what I know now and the problem that
+  needs fixing and the goal of improving.
+</p>
+<div class="post-end-notes">Notes</div>
+<ul>
+  <li>
+    These ideas were sparked by <a href="https://www.youtube.com/watch?v=4N6y6LEwsKc">The Artist is Absent: Davey Wreden
+      and The Beginner's Guide</a> where Innuendo Studios discusses the game
+    The Beginner's Guide.
+  </li>
+  <li>
+    I don't know if this made any sense but I think about programming as an art, communcation, and human interaction
+    through computers a lot.
+  </li>
+</ul>

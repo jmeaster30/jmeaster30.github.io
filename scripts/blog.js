@@ -1,5 +1,6 @@
 // newest to oldest
 const posts = [
+  { link: "the-artist-is-absent.html", title: "The Artist is Absent", author: "John Easterday", date: "3/9/2023" },
   { link: "testpost2.html", title: "This is ANOTHER test post", author: "John Easterday", date: "3/8/2023" },
   { link: "testpost.html", title: "This is a test post", author: "John Easterday", date: "3/8/2023" }
 ]
