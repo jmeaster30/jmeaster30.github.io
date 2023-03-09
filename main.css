@@ -1,0 +1,104 @@
+:root {
+  --space-bg: url('./assets/space.gif');
+  --cool-bg: url('./assets/back.png');
+  --lines-bg: url('./assets/output.png');
+  --green-bg: url('./assets/weirdRainbow3.png');
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  max-width: 100vw;
+  max-height: 100vh;
+  background-image: var(--space-bg);
+  margin: 0px;
+  font-family: 'Courier New', Courier, monospace;
+  overflow: hidden;
+}
+
+.site-title {
+  color: red;
+  font-weight: bold;
+  font-size: 48px;
+  text-align: center;
+  padding: 16px;
+}
+
+.site-controls {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.site-button {
+  padding: 16px;
+  margin: 8px 16px 0px 16px;
+  border-radius: 16px 16px 0px 0px;
+  height: 32px;
+  width: 100%;
+  color: white;
+  font-weight: bolder;
+  font-size: 24px;
+  text-shadow: 2px 2px 2px black;
+  background-color: lightblue;
+  filter: brightness(0.7);
+  box-shadow: inset 0px -8px 6px -6px black;
+  transition: filter 500ms ease 0s, box-shadow 500ms ease 0s;
+}
+
+.site-button[data-page="projects"] {
+  background-image: var(--cool-bg);
+}
+
+.site-button[data-page="blog"] {
+  background-image: var(--lines-bg);
+  background-position: -42px 64px;
+}
+
+.site-button[data-page="about-me"] {
+  background-image: var(--green-bg);
+}
+
+.site-button[data-is-selected="yes"] {
+  filter: brightness(1.0);
+  box-shadow: inset 0px 0px 6px -6px black;
+}
+
+.site-body {
+  min-height: 100%;
+  height: 100%;
+  transition: opacity 10000ms linear 0s;
+  color: white;
+  text-shadow: 2px 2px 2px black;
+}
+
+.site-body[data-page="projects"] {
+  background-image: var(--cool-bg);
+  background-position: 16px -64px;
+}
+
+.site-body[data-page="blog"] {
+  background-image: var(--lines-bg);
+}
+
+.site-body[data-page="about-me"] {
+  background-image: var(--green-bg);
+  background-position: 16px -64px;
+}
+
+.main-content {
+  padding: 16px;
+  transition: opacity 200ms ease 0s;
+  min-height: 100%;
+  height: 100%;
+  display: block;
+}
+
+.main-content[data-loaded="true"] {
+  opacity: 100%;
+}
+
+.main-content[data-loaded="false"] {
+  opacity: 0%;
+}
