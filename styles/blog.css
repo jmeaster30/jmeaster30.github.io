@@ -90,17 +90,20 @@
 .post-list-item-title {
   font-size: larger;
   font-weight: bolder;
+  user-select: none;
 }
 
 .post-list-item-author {
   font-style: italic;
   font-size: small;
   margin-right: 16px;
+  user-select: none;
 }
 
 .post-list-item-date {
   font-style: italic;
   font-size: small;
+  user-select: none;
 }
 
 .post-content-container {

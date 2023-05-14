@@ -54,8 +54,22 @@ function prevPost() {
   loadPost(posts[prev_index]);
 }
 
+function showPost(event) {
+  let listContainer = document.getElementById("post-list-container");
+  let contentContainer = document.getElementById("post-content-container");
+  listContainer.dataset.shown = "no";
+  contentContainer.dataset.shown = "yes";
+  console.log(event);
+  console.log(event.target.dataset.postIndex);
+  loadPost(posts[event.target.dataset.postIndex]);
+}
+
 function showList() {
   let listContainer = document.getElementById("post-list-container");
+  if (listContainer.dataset.shown == "yes") {
+    return;
+  }
+
   let contentContainer = document.getElementById("post-content-container");
   let prevPostButton = document.getElementById('prev-post');
   let nextPostButton = document.getElementById('next-post');
@@ -64,28 +78,35 @@ function showList() {
   prevPostButton.dataset.turnOff = "yes";
   nextPostButton.dataset.turnOff = "yes";
 
+  listContainer.innerHTML = ""
+
   for (let i = 0; i < posts.length; i++) {
-    var entry = document.createElement('div');
+    let entry = document.createElement('div');
     entry.setAttribute("class", "post-list-item");
+    entry.dataset.postIndex = i;
     
-    var title = document.createElement('div');
+    let title = document.createElement('div');
     title.className = "post-list-item-title";
     title.innerHTML = posts[i].title;
+    title.dataset.postIndex = i;
     entry.appendChild(title);
 
-    var author = document.createElement('span');
+    let author = document.createElement('span');
     author.className = "post-list-item-author";
     author.innerHTML = posts[i].author;
+    author.dataset.postIndex = i;
     entry.appendChild(author);
 
-    var date = document.createElement('span');
+    let date = document.createElement('span');
     date.className = "post-list-item-date";
     date.innerHTML = posts[i].date;
+    date.dataset.postIndex = i;
     entry.appendChild(date);
+
+    entry.addEventListener('click', showPost);
 
     listContainer.appendChild(entry);
   }
-
 }
 
 function initBlogPage() {

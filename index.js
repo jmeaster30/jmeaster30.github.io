@@ -6,7 +6,7 @@ function loadPage(pagename) {
     .then(html => {
       elem.innerHTML = html;
       switch (pagename) {
-        case 'projects': break;
+        case 'projects': initProjectPage(); break;
         case 'blog': initBlogPage(); break;
       }
       elem.dataset.loaded = "true";
