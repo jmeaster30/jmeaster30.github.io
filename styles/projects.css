@@ -36,7 +36,10 @@
 }
 
 .projects-list {
+    position: relative;
     overflow-y: scroll;
+    height: 70%;
+    min-height: 70%;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
     gap: 1rem;
@@ -49,6 +52,7 @@
     margin: 16px;
     border-radius: 32px;
     box-shadow: 4px 4px 4px black;
+    max-height: 200px;
 }
 
 .projects-card-title {

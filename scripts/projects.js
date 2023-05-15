@@ -8,6 +8,8 @@ const projects_list = [
     {title: 'Vore', description: 'A regex engine with english-like syntax', gitLink: 'https://github.com/jmeaster30/vore', link: '/projects/vore', tags: ['Go', 'Regex Engine', 'WASM']},
     {title: 'Particle Life', description: 'A simulation of basic rules on a set of particles', link: '/projects/particlelife', tags: ['Javascript', 'ThreeJS']},
     {title: 'PgPac', description: 'PostgreSQL deployment tool', gitLink: 'https://github.com/jmeaster30/pgpac', tags: ['PostgreSQL', 'Go', 'Database']},
+    {title: 'Syrency', description: 'A Minecraft mod that adds some redstone blocks for automating various things', gitLink: 'https://github.com/jmeaster30/syrency', tags: ['Java']},
+    {title: 'Nova Lilith OS', description: 'A toy operating system so I can learn about them and Exokernels', gitLink: 'https://github.com/jmeaster30/nova-lilith-os', tags: ['C++', 'Operating System']},
     //{title: 'Pipe Layer', description: 'An HTML5 game based on the mobile game Flow', link: '/games/pipelayer', tags: ['Game', 'TypeScript', 'HTML5']}
 ];
 
