@@ -71,11 +71,23 @@
     margin-right: 8px;
     margin-bottom: 8px;
     text-shadow: none;
-    border-radius: 16px;
+    border-radius: 16px; 
+    user-select: none;
 }
 
 .projects-card-desc {
     padding: 8px;
     backdrop-filter: blur(2px);
     border-radius: 8px;
+}
+
+.projects-card-git-link {
+    float: right;
+    color: white;
+    backdrop-filter: blur(2px);
+}
+
+.projects-card-git-icon {
+    width: 32px;
+    height: 32px;
 }
