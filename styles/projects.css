@@ -29,6 +29,10 @@
     border-radius: 0px;
 }
 
+.projects-tag:hover {
+    cursor: pointer;
+}
+
 .projects-tag[data-selected="yes"] {
     border-radius: 20px;
     border: 2px solid black;
@@ -42,7 +46,8 @@
     min-height: 70%;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
-    gap: 1rem;
+    grid-template-rows: 300px;
+    /*gap: 1rem;*/
 }
 
 .projects-card {
@@ -52,7 +57,14 @@
     margin: 16px;
     border-radius: 32px;
     box-shadow: 4px 4px 4px black;
+    min-height: 200px;
     max-height: 200px;
+    transition: box-shadow 200ms ease 0s;
+}
+
+.projects-card:hover {
+    box-shadow: 0px 0px 16px plum;
+    cursor: pointer;
 }
 
 .projects-card-title {

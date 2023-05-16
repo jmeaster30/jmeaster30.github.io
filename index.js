@@ -1,6 +1,7 @@
 
 function loadPage(pagename) {
   let elem = document.getElementById('main-content');
+  elem.dataset.loaded = "false";
   fetch(`pages/${pagename}.html`)
     .then(resp => resp.text())
     .then(html => {
