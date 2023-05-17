@@ -1,5 +1,6 @@
 // newest to oldest
 const posts = [
+  { link: "no-react.html", title: "Back to Basics: Getting rid of React", author: "John Easterday", date: "5/16/2023" },
   { link: "hotdogs-sandwiches.html", title: "A Hotdog is a Sandwich", author: "John Easterday", date: "5/11//2023" },
   { link: "testpost2.html", title: "This is ANOTHER test post", author: "John Easterday", date: "3/8/2023" },
   { link: "testpost.html", title: "This is a test post", author: "John Easterday", date: "3/8/2023" }

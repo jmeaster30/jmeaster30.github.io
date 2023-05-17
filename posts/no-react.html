@@ -1,0 +1,67 @@
+<div class="post-title">Back to Basics: Getting rid of React</div>
+<div class="post-author">John Easterday</div>
+<div class="post-date">5/16/2023</div>
+<p>
+    The site you are on right now is my personal programming portfolio website (which you probably knew if you are reading this).
+    My first version of this site was created while I was graduating college and was just the start of me making my projects public.
+    The goal was just something simple so I could use it as a portfolio for my upcoming job hunt. It was dead simple. 
+    Just a couple html files and the only javascript was part of two interactive demos I made. 
+    I also was focused on getting it done so I utilized Bootstrap for some basic components and css styling. 
+    Overall, it was a fine site and very ugly (I believe my name was also misspelled on it lol). 
+    On top of that, once I got my first programming job in November 2020, I had completely stopped updating it.
+</p>
+<h3>Lured in by Fancy Technology</h3>
+<p>
+    About 6 or 7 months ago, I decided it was time to give the site a face lift. But not just a face lift, I wanted to do things "the right way".
+    So, I decided I needed to use ReactJS with TypeScript. I went through the process of setting up a TypeScript project with React but I also 
+    wanted to use Bootstrap again because they had a nice assortment of fancy elements that I couldn't be bothered to recreate at all. However, 
+    I also wanted the development experience to be super smooth so I needed to add Webpack into the mix to automatically detect changes on 
+    the files I was editing and hot relaod my site that I was using in the browser. I also built out the CI/CD pipelines that ran webpack and 
+    combined all the files into a package that deployed to a separate branch that Github Pages was pointed at. 
+</p>
+<h3>The Beginning of the End</h3>
+<p>
+    This setup wasn't easy to build out despite the super lax tutorials with 5 lines of configuration. Did I overcomplicate parts 
+    of the setup? Almost defintely. However, I still found it extremely frustrating to follow these tutorials and have it
+    not work because the tutorial was made 1 year ago and all the packages it uses are deprecated. I also had to deal with conflicting packages
+    where I needed to install a particular package but found that a package I was already using brought with it the package I needed but the wrong version.
+    So to solve it I had to uninstall one of the packages but that broke another package. 
+    Again, it is very possible I was screwing something up but it was super difficult to learn what I was doing wrong. 
+    These libraries are not documented that well and only have a really basic setup that was somehow too basic for this really simple portfolio site.
+</p>
+<h3>The Realization</h3>
+<p>
+    I did actually end up at a good spot with the React version of the site and I started really expanding. 
+    I had some problems setting up those original interactive demos I had since React is pretty different from pure Javascript and I couldn't easily translate the demos.
+    My solution for that ended up being using iframes and embedding a different Github Pages site that hosted only those demos.
+    This is when the wheels in my brain started turning. I found it much more freeing to be doing this method of embedding the plain Javascript site into my React Typescript site.
+    Then I started questioning "why even have React if I am just going to embed everything into iframes?"
+</p>
+<h3>The Goal</h3>
+<p>
+    After about 5 months (on and off in my free time) of building up this personal site, I decided to start over. 
+    This time, I was going to use absolutely no external dependencies (except for one but not the one you would expect).
+    I wanted to use solely HTML and Javascript. 
+</p>
+<p>
+    No build system. 
+</p>
+<p>   
+    No static typing. 
+</p>
+<p>    
+    No state management. 
+</p>
+<p>
+    Ultimately this is a dead simple site. I am not processing or displaying visualizations of millions and billions of datapoints. No complicated APIs that I have to interact with.
+    I have no SLAs with customers. There are no other developers working on this site with me. I can really just do whatever I want. 
+    I also really wanted to get a better understanding of CSS so I decided Bootstrap was no more. The only dependency I wanted to use was Font Awesome for a couple icons I wanted to use.
+    Everything else is done completely by hand.
+</p>
+<h3>The Beginning of a new Beginning</h3>
+<p>
+    I am actually having a really fun time getting into the nitty gritty details of JavaScript and have refound my love of the language.
+    Also, I really wanted to improve on my CSS skills and I feel like for the first time ever that I finally understand what I am doing.
+    It is pretty amazing how removing the layers of abstractions and all these extra tools to make developer lives easier has actually made my life easier and has helped sharpen my skills.
+    I still have a lot that I want to learn but I am actually feeling like it isn't some weird black magic "that just works" it feels like something manageable and something I can tackle.
+</p>
