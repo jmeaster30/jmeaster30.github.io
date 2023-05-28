@@ -67,6 +67,11 @@
     cursor: pointer;
 }
 
+.projects-card[data-project-link="undefined"]:hover {
+    box-shadow: 4px 4px 4px black;
+    cursor: not-allowed;
+}
+
 .projects-card-title {
     color: white;
     font-weight: bold;

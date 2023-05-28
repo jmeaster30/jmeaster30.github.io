@@ -52,6 +52,15 @@ function buildTags() {
     }
 }
 
+function openProject(event, self) {
+    console.log(self.dataset.projectLink);
+    console.log(event);
+}
+
+function stopProp(event) {
+    event.stopPropagation();
+}
+
 function buildProjects() {
     console.log("build projects")
     let projectsListContainer = document.getElementById("projects-list");
@@ -77,7 +86,9 @@ function buildProjects() {
     for (let project of projects) {
         let entry = document.createElement("div");
         entry.setAttribute("class", "projects-card");
+        entry.addEventListener("click", ((event) => openProject(event, entry)));
         entry.dataset.projectTitle = project.title;
+        entry.dataset.projectLink = project.link;
 
         let title = document.createElement("span");
         title.setAttribute("class", "projects-card-title");
@@ -86,6 +97,7 @@ function buildProjects() {
 
         if (project.gitLink) {
             let gitIcon = document.createElement("a");
+            gitIcon.addEventListener("click", stopProp);
             gitIcon.setAttribute("class", "projects-card-git-link");
             gitIcon.setAttribute("href", project.gitLink);
             gitIcon.setAttribute("target", "_blank");
