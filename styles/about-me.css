@@ -1,4 +1,12 @@
 .about-me {
   font-size: 24px;
   font-weight: bold;
+
+  overflow-y: auto;
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+.about-me > :is(h1, h2, h3, h4, h5, h6) {
+  text-align: center;
 }

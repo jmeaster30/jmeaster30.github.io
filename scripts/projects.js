@@ -1,11 +1,13 @@
 const projects_list = [
-    {title: 'BlastPDF', description: 'Modify and generate PDF files utilizing a builder pattern for expressive pdf templates', gitLink: 'https://github.com/jmeaster30/BlastPDF', tags: ['C#', 'PDF', 'Code Generators']},
+    {title: 'ARBY', description: 'A Really Basic data serialization language. Inspired by YAML but made dead simple.', gitLink: 'https://github.com/jmeaster30/arby', tags: ['C#']},
+    {title: 'BlastPDF', description: 'Modify and generate PDF files utilizing a builder pattern for expressive pdf templates', gitLink: 'https://github.com/jmeaster30/BlastPDF', tags: ['C#', 'File Format', 'Code Generators']},
+    {title: 'SharperImage', description: 'Library for image encoder/decoders and an image file viewer', gitLink: 'https://github.com/jmeaster30/SharperImage', tags: ['C#', 'File Format']},
     {title: 'Ocean', description: 'A toy programming language that I am using for learning about compilers and development tooling', gitLink: 'https://github.com/jmeaster30/ocean', tags: ['Rust', 'Compiler']},
     {title: 'Noise Engine', description: 'An opengl game engine', gitLink: 'https://github.com/jmeaster30/noise-engine', tags: ['C++', 'OpenGL']},
     {title: 'Spotify API Demo', description: 'Inspired by billclintonswag.com but with more people.', link: '/projects/spotifyswag', tags: ['Javascript', 'SpotifyAPI','p5.js']},
     {title: 'Stax', description: 'A concatenative stack-based programming language', gitLink: 'https://github.com/jmeaster30/stax', tags: ['Java', 'Compiler']},
     {title: 'SimpleDNS', description: 'A really basic DNS server', gitLink: 'https://github.com/jmeaster30/simpledns', tags: ['Rust', 'Networking']},
-    {title: 'Vore', description: 'A regex engine with english-like syntax', gitLink: 'https://github.com/jmeaster30/vore', link: '/projects/vore', tags: ['Go', 'Regex Engine', 'WASM']},
+    {title: 'Vore', description: 'A regex engine with english-like syntax', gitLink: 'https://github.com/jmeaster30/vore', link: '/projects/vore', tags: ['Go', 'Regex', 'WASM']},
     {title: 'Particle Life', description: 'A simulation of basic rules on a set of particles', link: '/projects/particlelife', tags: ['Javascript', 'ThreeJS']},
     {title: 'PgPac', description: 'PostgreSQL deployment tool', gitLink: 'https://github.com/jmeaster30/pgpac', tags: ['PostgreSQL', 'Go', 'Database']},
     {title: 'Syrency', description: 'A Minecraft mod that adds some redstone blocks for automating various things', gitLink: 'https://github.com/jmeaster30/syrency', tags: ['Java']},
@@ -62,7 +64,6 @@ function stopProp(event) {
 }
 
 function buildProjects() {
-    console.log("build projects")
     let projectsListContainer = document.getElementById("projects-list");
     let tagListContainer = document.getElementById("projects-tags-list");
     let tagEntries = [];
@@ -71,7 +72,6 @@ function buildProjects() {
         tagEntries.push({tag: elem.innerHTML, color: elem.dataset.color, selected: elem.dataset.selected});
     }
     let selectedTags = tagEntries.filter(x => x.selected == "yes");
-    console.log(selectedTags);
     let projects = projects_list.filter(value => {
         if (selectedTags.length == 0) return true;
         for(let selectedTag of selectedTags) {
