@@ -25,10 +25,116 @@
     <li>And many more...</li>
   </ul>
   <h2>Professional Experience</h2>
+  <h3>Oracle - Software Engineer - July 2023 to Present</h3>
   <p>
-    Currently (August 2022), I am the lead developer of a small programming team working on medical billing software. We
-    use C#, React, PostgreSQL and Azure for our tech stack. I have lead successful migrations (minimal downtime observed
-    from customers and no lost data) from SQLServer to PostgreSQL and from on-prem IIS servers to Azure-hosted App
-    Services (including blob storage for documents and azure functions for background processing).
+    I am working on software that is used by hospital systems. 
+    I mostly work on backend and a little bit of the Java SWT frontend. 
+    Every few months, we do support rotations which involve performing releases of our team's products, 
+    monitoring production environments for issues, and resolving bugs that need to be fixed. 
+    The work I am most proud of was identifying and resolving memory leaks through analyzing heap dumps 
+    and improving request performance through various methods.
   </p>
+  <h4>Tech Used</h4>
+  <ul>
+    <li>Java (8/11)</li>
+    <li>Java SWT</li>
+    <li>MySQL</li>
+    <li>Maven</li>
+    <li>Jenkins</li>
+    <li>OSGi</li>
+    <li>Microservices</li>
+    <li>Splunk</li>
+    <li>New Relic</li>
+    <li>JIRA</li>
+    <li>Crucible</li>
+    <li>Github</li>
+  </ul>  
+  <h3>Medbill - Development Manager - May 2023 to June 2023</h3>
+  <p>
+    Managed the Site-Reliability Engineering, Software Engineering, and Quality Assurance teams. 
+    Most of my responsibilities involved requirement gathering for main features,
+    performing releases,
+    monitoring the site and responding to issues that arise,
+    designing and implementing architectural changes to our software, 
+    designing and implementing new processes to increase productivity,
+    making descisions around salary and hiring the right people for the job,
+    and managing the team to make sure we had the resources we need and everyone is able to work effectively.
+  </p>
+  <p>
+    I wasn't in this role for long but I worked on a plan to overhaul our QA processes and before 
+    I left I wrote and recorded training lessons for all of the processes that I was performing and all 
+    of the architectural work that I had not completed.
+  </p>
+  <h3>Medbill - Lead Developer - December 2021 to May 2023</h3>
+  <p>
+    Managed the Site-Reliability Engineering and the Software Engineering teams. 
+    My main responsibilities were requirement gathering for main features,
+    performing releases,
+    monitoring the site and responding to issues that arise,
+    designing and implementing archiectural changes to our software,
+    designing and implementing new processes to increase productivity,
+    making descisions around salary and hiring the right people for the job,
+    and managing the team to make sure we had the resources we need and everyone is able to work effectively.
+  </p>
+  <p>
+    Also, I had some big projects that I was able to handle on my own. I implemented electronic claim submission with the EDI-837 and EDI-835 standards and interfaced with a clearinghouse so they could be submitted to insurances.
+    This let our application submit a claim and get a response on the validity of the claim with a turn around time of seconds when our competitors had a turn around time of days.
+    I migrated our on-premises app to the cloud for better reliability and scalability. This involved migrating from SQLServer 
+    to PostgreSQL and this migration was successful with no loss of data and no downtime other than 
+    the usual 2-3 hours for our deployments. Then I migrated from IIS to Azure App Services, this involved 
+    setting up a testing environment and set up our Atlassian Bamboo deployment pipelines to make 
+    sure everything could be deployed properly. This migration also only had the usual 2-3 hour downtime 
+    that we usually had for deployments. Then we were moving from Atlassian products (Jira, BitBucket, Bamboo) to Azure DevOps.
+    I migrated all the work items, code, and pipelines into the Azure DevOps set of products. 
+    I also spent a lot of time optimizing and improving the release process so that the whole release process took 5-10 minutes with zero downtime for the end-user.
+    There were some issues with our releases though. The first was that they weren't easily reversible in case there were issues with the release. 
+    The other was this random glitch that happened when a user was using the site and had loaded the previous version of the site and tried to do anything a bunch of errors would be thrown up on the screen.
+    This was very random though and the user would just need to refresh for everything to work properly again.
+    These improvments to the release process let us go from releasing our code every couple months to releasing weekly and even every day if we needed.
+  </p>
+  <h4>Tech Used</h4>
+  <ul>
+    <li>C# / Dotnet 6</li>
+    <li>ASPNET Core</li>
+    <li>React</li>
+    <li>Typescript</li>
+    <li>PostgreSQL</li>
+    <li>Azure App Service</li>
+    <li>Azure Functions</li>
+    <li>Azure Blob Storage</li>
+    <li>Azure Databases</li>
+    <li>Azure Networking</li>
+    <li>Azure DevOps</li>
+    <li>Azure Pipelines</li>
+    <li>FastReport</li>
+    <li>GoDaddy</li>
+  </ul>
+  <h3>Medbill - Software Engineer - November 2020 to December 2021</h3>
+  <p>
+    My main responsibility was implementing features and bug fixes for a Durable Medical Equipment Billing software. 
+    I had a few features/projects that I was really proud of. First, I worked on PDF and Excel Spreadsheet reporting 
+    and I made a wrapper library for the OpenXML library that made it a lot easier to generate Excel spreadsheets that were not corrupted.
+    I implemented electronic insurance verification using the EDI-270 and EDI-271 standards and interfaced with a clearinghouse so they could be submitted to insurances. 
+    This let our users make a verification request and get a response in seconds instead of having to manually call the insurance which usually took about an hour.
+    I converted our site's document storage from a file server hosted by our company into Azure Blob Storage. This let us scale our document storage much easier. 
+    Involved in this, I wrote a tool that took all the documents from our local storage and put them into Azure Storage. 
+    This initially took a few hours to only upload a couple thousand documents when we had nearly half a million documents across all of our customer environments. 
+    So, I spent some time optimizing the tool and made it so it could upload 150,000 documents in 15 minutes. 
+    I did this through just better database query logic, avoiding downloading the files locally first, and also through heavy use of parallelization.
+    After some time, I also started managing/monitoring the site through IIS and managing the Bamboo build pipelines as well as running releases.
+  </p>
+  <h4>Tech Used</h4>
+  <ul>
+    <li>C# / Dotnet 5</li>
+    <li>ASPNET Core</li>
+    <li>React</li>
+    <li>Javascript</li>
+    <li>SQLServer</li>
+    <li>IIS</li>
+    <li>Bamboo</li>
+    <li>JIRA</li>
+    <li>BitBucket</li>
+    <li>FastReport</li>
+    <li>OpenXML</li>
+  </ul>
 </div>

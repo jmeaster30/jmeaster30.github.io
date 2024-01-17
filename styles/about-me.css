@@ -1,8 +1,11 @@
 .about-me {
+  position: relative;
   font-size: 24px;
   font-weight: bold;
 
-  overflow-y: auto;
+  overflow-y: scroll;
+  height: 100%;
+  min-height: 100%;
   padding-left: 32px;
   padding-right: 32px;
 }

@@ -47,7 +47,6 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
     grid-template-rows: 300px;
-    box-shadow: inset 0 -8px 6px -6px black;
     /*gap: 1rem;*/
 }
 

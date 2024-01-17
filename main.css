@@ -57,10 +57,15 @@ body {
   align-items: center;
   text-shadow: 2px 2px 2px black;
   background-color: lightblue;
-  filter: brightness(0.7);
-  box-shadow: inset 0px -8px 6px -6px black;
-  transition: filter 500ms ease 0s, box-shadow 500ms ease 0s;
+  filter: brightness(0.8);
+  box-shadow: 0px 0px 0px black;
+  transition: filter 500ms ease 0s, box-shadow 200ms ease 0s;
   user-select: none;
+}
+
+.site-button:hover {
+  box-shadow: 0px 0px 8px black;
+  cursor: pointer;
 }
 
 .site-button[data-page="projects"] {
@@ -74,7 +79,7 @@ body {
 
 .site-button[data-is-selected="yes"] {
   filter: brightness(1.0);
-  box-shadow: inset 0px 0px 6px -6px black;
+  box-shadow: 2px 2px 8px purple;
 }
 
 .site-body {
@@ -87,6 +92,7 @@ body {
   color: white;
   text-shadow: 2px 2px 2px black;
   padding-top: 16px;
+  box-shadow: inset 0px 0px 32px black;
 }
 
 .site-body[data-page="projects"] {
